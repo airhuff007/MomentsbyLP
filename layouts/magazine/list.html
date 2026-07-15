@@ -1,0 +1,55 @@
+{{ define "main" }}
+<section class="page-magazine-list">
+
+  <nav aria-label="Breadcrumb">
+    <ol role="list">
+      <li><a href="/">Home</a></li>
+      {{ if not .IsSection }}
+      <li><a href="/magazine/">Magazine</a></li>
+      {{ end }}
+      <li aria-current="page">{{ .Title }}</li>
+    </ol>
+  </nav>
+
+  <header class="magazine-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}<p class="section-desc">{{ . }}</p>{{ end }}
+    {{ with .Content }}<div class="section-intro">{{ . }}</div>{{ end }}
+  </header>
+
+  {{/* Magazine category navigation */}}
+  {{ if .IsSection }}
+  <nav class="magazine-categories" aria-label="Magazine categories">
+    <ul role="list">
+      <li><a href="/magazine/local-businesses/">Local Businesses</a></li>
+      <li><a href="/magazine/creator-spotlights/">Creator Spotlights</a></li>
+      <li><a href="/magazine/south-florida-living/">South Florida Living</a></li>
+      <li><a href="/magazine/boca-guides/">Boca Guides</a></li>
+      <li><a href="/magazine/style-guides/">Style Guides</a></li>
+      <li><a href="/magazine/events/">Events</a></li>
+    </ul>
+  </nav>
+  {{ end }}
+
+  {{ if .Pages }}
+  <ul role="list" class="magazine-grid">
+    {{ range .Pages }}
+    <li>
+      <article>
+        {{ with .Params.category }}<p class="story-category">{{ . }}</p>{{ end }}
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+        {{ with .Date }}<p><time datetime="{{ .Format "2006-01-02" }}">{{ .Format "January 2, 2006" }}</time></p>{{ end }}
+      </article>
+    </li>
+    {{ end }}
+  </ul>
+  {{ else }}
+  <p>Stories coming soon. <a href="/contact/">Reach out to be featured.</a></p>
+  {{ end }}
+
+  {{/* Newsletter on every magazine page */}}
+  {{ partial "newsletter.html" . }}
+
+</section>
+{{ end }}

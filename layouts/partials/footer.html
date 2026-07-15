@@ -1,24 +1,66 @@
 <footer role="contentinfo">
-  <nav aria-label="Footer navigation">
-    <ul role="list">
-      <li><a href="/family-photographer-boca-raton/">Family Photographer Boca Raton</a></li>
-      <li><a href="/branding-photographer-boca-raton/">Branding Photographer Boca Raton</a></li>
-      <li><a href="/headshots-boca-raton/">Headshots Boca Raton</a></li>
-      <li><a href="/couples-photography-boca-raton/">Couples Photographer Boca Raton</a></li>
-      <li><a href="/business-photography-boca-raton/">Business Photography Boca Raton</a></li>
-      <li><a href="/christmas-mini-sessions-boca-raton/">Christmas Mini Sessions Boca Raton</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="/contact/">Contact</a></li>
-    </ul>
-  </nav>
 
-  <address>
-    <p>Moments by LP Photography &mdash; Boca Raton, FL</p>
-    {{ with site.Params.phone }}<p><a href="tel:{{ . }}">{{ . }}</a></p>{{ end }}
-    {{ with site.Params.email }}<p><a href="mailto:{{ . }}">{{ . }}</a></p>{{ end }}
-  </address>
+  <div class="footer-grid">
 
-  <p>Serving Boca Raton, Delray Beach, Boynton Beach, Palm Beach, Fort Lauderdale, Coral Springs, Parkland, and West Palm Beach.</p>
+    <div class="footer-col">
+      <p class="footer-brand">Moments by LP</p>
+      <address>
+        <p>Boca Raton, FL</p>
+        {{ with site.Params.phone }}<p><a href="tel:{{ . }}">{{ . }}</a></p>{{ end }}
+        {{ with site.Params.email }}<p><a href="mailto:{{ . }}">{{ . }}</a></p>{{ end }}
+      </address>
+      <p>Serving Boca Raton, Delray Beach, Boynton Beach, Palm Beach, Fort Lauderdale, Coral Springs, Parkland, and West Palm Beach.</p>
+    </div>
 
-  <p><small>&copy; {{ now.Year }} Moments by LP Photography. All rights reserved.</small></p>
+    <div class="footer-col">
+      <p class="footer-col-heading">Photography</p>
+      <nav aria-label="Photography services">
+        <ul role="list">
+          <li><a href="/family-photographer-boca-raton/">Family Photographer Boca Raton</a></li>
+          <li><a href="/branding-photographer-boca-raton/">Branding Photographer Boca Raton</a></li>
+          <li><a href="/headshots-boca-raton/">Headshots Boca Raton</a></li>
+          <li><a href="/couples-photography-boca-raton/">Couples Photographer Boca Raton</a></li>
+          <li><a href="/maternity-photographer-boca-raton/">Maternity Photographer Boca Raton</a></li>
+          <li><a href="/lifestyle-photographer-boca-raton/">Lifestyle Photographer Boca Raton</a></li>
+          <li><a href="/business-photography-boca-raton/">Commercial Photography Boca Raton</a></li>
+          <li><a href="/content-days-boca-raton/">Content Days Boca Raton</a></li>
+          <li><a href="/seasonal-mini-sessions-boca-raton/">Seasonal Mini Sessions</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-col-heading">Locations</p>
+      <nav aria-label="Locations served">
+        <ul role="list">
+          <li><a href="/boca-raton-photographer/">Boca Raton Photographer</a></li>
+          <li><a href="/delray-beach-photographer/">Delray Beach Photographer</a></li>
+          <li><a href="/palm-beach-photographer/">Palm Beach Photographer</a></li>
+          <li><a href="/fort-lauderdale-photographer/">Fort Lauderdale Photographer</a></li>
+          <li><a href="/boynton-beach-photographer/">Boynton Beach Photographer</a></li>
+          <li><a href="/west-palm-beach-photographer/">West Palm Beach Photographer</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-col-heading">Explore</p>
+      <nav aria-label="Site sections">
+        <ul role="list">
+          <li><a href="/magazine/">Magazine</a></li>
+          <li><a href="/magazine/local-businesses/">Local Businesses</a></li>
+          <li><a href="/magazine/creator-spotlights/">Creator Spotlights</a></li>
+          <li><a href="/magazine/south-florida-living/">South Florida Living</a></li>
+          <li><a href="/creator-community/">Creator Community</a></li>
+          <li><a href="/resources/">Free Resources</a></li>
+          <li><a href="/about/">About Lauren</a></li>
+          <li><a href="/book/">Book a Session</a></li>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+
+  <p class="footer-legal"><small>&copy; {{ now.Year }} Moments by LP Photography. All rights reserved.</small></p>
+
 </footer>

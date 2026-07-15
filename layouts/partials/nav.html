@@ -1,15 +1,44 @@
 <header role="banner">
   <nav aria-label="Main navigation">
-    <a href="/" aria-label="Moments by LP — Home">Moments by LP</a>
-    <ul role="list">
-      <li><a href="/family-photographer-boca-raton/">Family</a></li>
-      <li><a href="/branding-photographer-boca-raton/">Branding</a></li>
-      <li><a href="/headshots-boca-raton/">Headshots</a></li>
-      <li><a href="/couples-photography-boca-raton/">Couples</a></li>
-      <li><a href="/business-photography-boca-raton/">Business</a></li>
-      <li><a href="/christmas-mini-sessions-boca-raton/">Mini Sessions</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="/contact/">Contact</a></li>
+    <a href="/" class="nav-brand" aria-label="Moments by LP — Home">Moments by LP</a>
+
+    <ul role="list" class="nav-primary">
+
+      {{/* Photography dropdown */}}
+      <li class="nav-has-dropdown">
+        <a href="/photography/">Photography</a>
+        <ul role="list" class="nav-dropdown" aria-label="Photography services">
+          <li><a href="/family-photographer-boca-raton/">Family Photography</a></li>
+          <li><a href="/branding-photographer-boca-raton/">Branding Photography</a></li>
+          <li><a href="/couples-photography-boca-raton/">Couples</a></li>
+          <li><a href="/maternity-photographer-boca-raton/">Maternity</a></li>
+          <li><a href="/lifestyle-photographer-boca-raton/">Lifestyle</a></li>
+          <li><a href="/business-photography-boca-raton/">Commercial</a></li>
+          <li><a href="/content-days-boca-raton/">Content Days</a></li>
+          <li><a href="/seasonal-mini-sessions-boca-raton/">Seasonal Minis</a></li>
+        </ul>
+      </li>
+
+      <li><a href="/portfolio/">Portfolio</a></li>
+
+      {{/* Magazine dropdown */}}
+      <li class="nav-has-dropdown">
+        <a href="/magazine/">Magazine</a>
+        <ul role="list" class="nav-dropdown" aria-label="Magazine sections">
+          <li><a href="/magazine/local-businesses/">Local Businesses</a></li>
+          <li><a href="/magazine/creator-spotlights/">Creator Spotlights</a></li>
+          <li><a href="/magazine/south-florida-living/">South Florida Living</a></li>
+          <li><a href="/magazine/boca-guides/">Boca Guides</a></li>
+          <li><a href="/magazine/style-guides/">Style Guides</a></li>
+          <li><a href="/magazine/events/">Events</a></li>
+        </ul>
+      </li>
+
+      <li><a href="/creator-community/">Creator Community</a></li>
+      <li><a href="/resources/">Resources</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/book/" class="nav-cta">Book Now</a></li>
+
     </ul>
   </nav>
 </header>

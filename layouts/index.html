@@ -4,89 +4,121 @@
   {{/* ── Hero ── */}}
   <section class="hero" aria-labelledby="hero-heading">
     <h1 id="hero-heading">Boca Raton Photographer</h1>
-    <h2>Family, Branding &amp; Lifestyle Photography in South Florida</h2>
+    <h2>Luxury Photography &amp; Creative Storytelling for South Florida</h2>
     <p>
-      Hi, I&rsquo;m Lauren &mdash; a Boca Raton photographer creating authentic,
-      intentional images for families, brands, and entrepreneurs across South Florida.
-      Based in Boca Raton and available throughout Palm Beach and Broward County.
+      Capturing the people, brands, and places that make South Florida beautiful.
+      Based in Boca Raton &mdash; serving Palm Beach, Broward, and beyond.
     </p>
-    {{ with site.Params.bookingURL }}
-    <a href="{{ . }}" class="cta-button" rel="noopener">Book a Session</a>
-    {{ end }}
+    <div class="hero-ctas">
+      <a href="/book/" class="cta-button cta-primary">Book a Session</a>
+      <a href="/magazine/" class="cta-button cta-secondary">Read the Magazine</a>
+    </div>
   </section>
 
-  {{/* ── Services ── */}}
+  {{/* ── Featured Services ── */}}
   <section class="services" aria-labelledby="services-heading">
     <h2 id="services-heading">Photography Services in Boca Raton &amp; South Florida</h2>
     <ul role="list" class="service-grid">
       <li>
         <h3><a href="/family-photographer-boca-raton/">Family Photography</a></h3>
-        <p>Timeless family portraits in Boca Raton, Delray Beach, and along the South Florida coast.</p>
+        <p>Timeless family portraits along South Florida&rsquo;s beaches, parks, and neighborhoods.</p>
       </li>
       <li>
-        <h3><a href="/branding-photographer-boca-raton/">Brand Photography</a></h3>
-        <p>Personal branding sessions for entrepreneurs and small businesses in Boca Raton and Palm Beach County.</p>
+        <h3><a href="/branding-photographer-boca-raton/">Personal Branding</a></h3>
+        <p>On-brand photography for entrepreneurs, coaches, and small businesses in Boca Raton.</p>
       </li>
       <li>
-        <h3><a href="/headshots-boca-raton/">Professional Headshots</a></h3>
-        <p>Modern, on-brand headshots for executives, realtors, attorneys, and creatives in Boca Raton.</p>
+        <h3><a href="/business-photography-boca-raton/">Commercial Content</a></h3>
+        <p>Editorial and commercial photography for restaurants, hotels, retailers, and brands.</p>
       </li>
       <li>
-        <h3><a href="/couples-photography-boca-raton/">Couples Photography</a></h3>
-        <p>Engagement and couples sessions across South Florida&rsquo;s most beautiful locations.</p>
+        <h3><a href="/couples-photography-boca-raton/">Couples &amp; Engagements</a></h3>
+        <p>Romantic, natural couples sessions across South Florida&rsquo;s most beautiful locations.</p>
       </li>
       <li>
-        <h3><a href="/business-photography-boca-raton/">Business Photography</a></h3>
-        <p>Commercial and editorial photography for Boca Raton businesses, restaurants, and brands.</p>
+        <h3><a href="/content-days-boca-raton/">Content Days</a></h3>
+        <p>Dedicated content creation days for entrepreneurs who need a library of social media images.</p>
       </li>
       <li>
-        <h3><a href="/christmas-mini-sessions-boca-raton/">Holiday Mini Sessions</a></h3>
-        <p>Seasonal mini sessions in Boca Raton &mdash; fast, fun, and festive for the whole family.</p>
+        <h3><a href="/seasonal-mini-sessions-boca-raton/">Seasonal Minis</a></h3>
+        <p>Holiday and seasonal mini sessions in Boca Raton &mdash; limited spots, book early.</p>
       </li>
     </ul>
+    <a href="/photography/">View All Photography Services &rarr;</a>
+  </section>
+
+  {{/* ── Magazine / Latest Stories ── */}}
+  {{ $stories := where .Site.RegularPages "Section" "magazine" | first 4 }}
+  {{ if not $stories }}
+    {{ $stories = where .Site.RegularPages "Section" "blog" | first 4 }}
+  {{ end }}
+  {{ if $stories }}
+  <section class="latest-stories" aria-labelledby="stories-heading">
+    <h2 id="stories-heading">Latest Stories from South Florida</h2>
+    <p>Local business features, creator spotlights, South Florida guides, and photography inspiration.</p>
+    <ul role="list" class="story-grid">
+      {{ range $stories }}
+      <li>
+        <article>
+          {{ with .Params.category }}<p class="story-category">{{ . }}</p>{{ end }}
+          <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+          <p>{{ .Summary | truncate 120 }}</p>
+        </article>
+      </li>
+      {{ end }}
+    </ul>
+    <a href="/magazine/">Read the Magazine &rarr;</a>
+  </section>
+  {{ end }}
+
+  {{/* ── Featured Business ── */}}
+  <section class="featured-business" aria-labelledby="featured-biz-heading">
+    <h2 id="featured-biz-heading">Featured South Florida Business</h2>
+    <p>
+      Every week, Moments by LP features a local business, creator, or restaurant in South Florida.
+      From Boca Raton coffee shops to Palm Beach boutiques &mdash; the best of our community, photographed and celebrated.
+    </p>
+    <a href="/magazine/local-businesses/">See All Featured Businesses &rarr;</a>
   </section>
 
   {{/* ── About snippet ── */}}
   <section class="about-snippet" aria-labelledby="about-heading">
-    <h2 id="about-heading">South Florida&rsquo;s Family &amp; Brand Photographer</h2>
+    <h2 id="about-heading">More Than a Photography Studio</h2>
     <p>
-      Moments by LP is a boutique photography studio serving Boca Raton, Delray Beach,
-      Boynton Beach, Palm Beach, Fort Lauderdale, Coral Springs, Parkland, and West Palm Beach.
-      Whether you&rsquo;re looking for a family photographer in Boca Raton, a brand photographer
-      for your South Florida business, or a lifestyle portrait session, Lauren brings warmth,
-      creativity, and intention to every session.
+      Moments by LP is a boutique photography studio and creative platform based in Boca Raton, Florida.
+      Lauren photographs families, brands, and businesses across South Florida &mdash; and through the
+      Moments by LP Magazine, she tells the stories of the people and places that make this community special.
     </p>
+    <p>
+      Whether you&rsquo;re searching for a family photographer in Boca Raton, a branding photographer
+      for your South Florida business, or a creative community to grow with &mdash; you found your place.
+    </p>
+    <a href="/about/">Meet Lauren &rarr;</a>
   </section>
 
-  {{/* ── Blog teasers ── */}}
-  {{ $posts := where .Site.RegularPages "Section" "blog" | first 3 }}
-  {{ if $posts }}
-  <section class="blog-preview" aria-labelledby="blog-heading">
-    <h2 id="blog-heading">South Florida Photography Tips &amp; Local Guides</h2>
-    <ul role="list">
-      {{ range $posts }}
-      <li>
-        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-        <p>{{ .Summary }}</p>
-      </li>
-      {{ end }}
-    </ul>
-    <a href="/blog/">Read All Posts</a>
+  {{/* ── Creator Community teaser ── */}}
+  <section class="community-teaser" aria-labelledby="community-heading">
+    <h2 id="community-heading">Join the South Florida Creator Community</h2>
+    <p>
+      Portfolio days. Styled shoots. Casting calls. Creative resources. A growing community of photographers,
+      entrepreneurs, and creatives in South Florida.
+    </p>
+    <a href="/creator-community/" class="cta-button">Learn More</a>
   </section>
-  {{ end }}
 
-  {{/* ── Service areas ── */}}
-  <section class="service-areas" aria-labelledby="areas-heading">
-    <h2 id="areas-heading">Areas Served</h2>
-    <ul role="list">
-      <li>Boca Raton, FL</li>
-      <li>Delray Beach, FL</li>
-      <li>Boynton Beach, FL</li>
-      <li>Palm Beach, FL</li>
-      <li>Fort Lauderdale, FL</li>
-      <li>Coral Springs, FL</li>
-      <li>Parkland, FL</li>
-      <li>West Palm Beach, FL</li>
+  {{/* ── Newsletter ── */}}
+  {{ partial "newsletter.html" . }}
+
+  {{/* ── Location links (SEO) ── */}}
+  <section class="location-links" aria-labelledby="locations-heading">
+    <h2 id="locations-heading">South Florida Photographer — Areas Served</h2>
+    <ul role="list" class="location-grid">
+      <li><a href="/boca-raton-photographer/">Boca Raton Photographer</a></li>
+      <li><a href="/delray-beach-photographer/">Delray Beach Photographer</a></li>
+      <li><a href="/palm-beach-photographer/">Palm Beach Photographer</a></li>
+      <li><a href="/fort-lauderdale-photographer/">Fort Lauderdale Photographer</a></li>
+      <li><a href="/boynton-beach-photographer/">Boynton Beach Photographer</a></li>
+      <li><a href="/west-palm-beach-photographer/">West Palm Beach Photographer</a></li>
     </ul>
   </section>
 

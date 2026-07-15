@@ -1,0 +1,44 @@
+{{ define "main" }}
+<article class="page-magazine-article" itemscope itemtype="https://schema.org/Article">
+
+  <nav aria-label="Breadcrumb">
+    <ol role="list">
+      <li><a href="/">Home</a></li>
+      <li><a href="/magazine/">Magazine</a></li>
+      {{ with .Parent }}<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>{{ end }}
+      <li aria-current="page">{{ .Title }}</li>
+    </ol>
+  </nav>
+
+  <header>
+    {{ with .Params.category }}<p class="story-category" itemprop="articleSection">{{ . }}</p>{{ end }}
+    <h1 itemprop="headline">{{ .Title }}</h1>
+    {{ with .Params.description }}<p class="article-desc">{{ . }}</p>{{ end }}
+    <p class="article-meta">
+      By <span itemprop="author">Lauren</span>
+      &mdash;
+      <time datetime="{{ .Date.Format "2006-01-02" }}" itemprop="datePublished">
+        {{ .Date.Format "January 2, 2006" }}
+      </time>
+    </p>
+  </header>
+
+  <div class="article-body" itemprop="articleBody">
+    {{ .Content }}
+  </div>
+
+  {{/* Related services CTA */}}
+  <aside class="article-cta" aria-label="Work with Lauren">
+    <h2>Interested in Having Your Business Featured?</h2>
+    <p>
+      Moments by LP features local South Florida businesses, restaurants, creators, and brands.
+      Photography and editorial coverage that gets you seen &mdash; in Google, on Instagram, and in the community.
+    </p>
+    <a href="/contact/" class="cta-button">Get in Touch</a>
+  </aside>
+
+  {{/* Newsletter */}}
+  {{ partial "newsletter.html" . }}
+
+</article>
+{{ end }}
