@@ -1,0 +1,66 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+{{/* ── Title ── */}}
+{{ $title := "" }}
+{{ if .IsHome }}
+  {{ $title = site.Title }}
+{{ else }}
+  {{ $title = printf "%s | %s" .Title site.Title }}
+{{ end }}
+<title>{{ $title }}</title>
+
+{{/* ── Meta Description ── */}}
+{{ $desc := .Params.description | default site.Params.description }}
+<meta name="description" content="{{ $desc }}" />
+
+{{/* ── Keywords ── */}}
+{{ with .Params.keywords }}
+<meta name="keywords" content="{{ delimit . ", " }}" />
+{{ end }}
+
+{{/* ── Canonical ── */}}
+<link rel="canonical" href="{{ .Permalink }}" />
+
+{{/* ── Robots ── */}}
+{{ if .Params.noindex }}
+<meta name="robots" content="noindex, nofollow" />
+{{ else }}
+<meta name="robots" content="index, follow" />
+{{ end }}
+
+{{/* ── Open Graph ── */}}
+{{ $ogImage := .Params.ogImage | default site.Params.ogImage }}
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+<meta property="og:title" content="{{ $title }}" />
+<meta property="og:description" content="{{ $desc }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:site_name" content="{{ site.Params.businessName }}" />
+{{ with $ogImage }}<meta property="og:image" content="{{ site.BaseURL }}{{ . | strings.TrimPrefix "/" }}" />{{ end }}
+{{ if .IsPage }}
+  {{ with .Date }}<meta property="article:published_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}" />{{ end }}
+  {{ with .Lastmod }}<meta property="article:modified_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}" />{{ end }}
+{{ end }}
+
+{{/* ── Twitter Card ── */}}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ $title }}" />
+<meta name="twitter:description" content="{{ $desc }}" />
+{{ with $ogImage }}<meta name="twitter:image" content="{{ site.BaseURL }}{{ . | strings.TrimPrefix "/" }}" />{{ end }}
+
+{{/* ── JSON-LD Structured Data ── */}}
+{{ partial "schema.html" . }}
+
+{{/* ── Sitemap ── */}}
+<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+{{/* ── Preconnect ── */}}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+{{/* ── Favicon placeholders ── */}}
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+{{/* ── Stylesheet ── */}}
+<link rel="stylesheet" href="/css/main.css" />

@@ -1,0 +1,45 @@
+{{ define "main" }}
+<article class="page-single" itemscope itemtype="https://schema.org/WebPage">
+
+  {{/* ── Breadcrumb ── */}}
+  <nav aria-label="Breadcrumb">
+    <ol role="list">
+      <li><a href="/">Home</a></li>
+      {{ if .Parent }}
+      <li><a href="{{ .Parent.Permalink }}">{{ .Parent.Title }}</a></li>
+      {{ end }}
+      <li aria-current="page">{{ .Title }}</li>
+    </ol>
+  </nav>
+
+  <header>
+    <h1 itemprop="headline">{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="subtitle">{{ . }}</p>{{ end }}
+
+    {{/* Blog post meta */}}
+    {{ if eq .Section "blog" }}
+    <p class="post-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}" itemprop="datePublished">
+        {{ .Date.Format "January 2, 2006" }}
+      </time>
+    </p>
+    {{ end }}
+  </header>
+
+  <div class="page-content" itemprop="text">
+    {{ .Content }}
+  </div>
+
+  {{/* ── CTA at bottom of every page ── */}}
+  <aside class="page-cta" aria-label="Book a session">
+    <h2>Ready to Book Your Boca Raton Photography Session?</h2>
+    <p>Serving Boca Raton, Delray Beach, Palm Beach, Fort Lauderdale, and all of South Florida.</p>
+    {{ with site.Params.bookingURL }}
+    <a href="{{ . }}" class="cta-button" rel="noopener">Book Now</a>
+    {{ else }}
+    <a href="/contact/" class="cta-button">Get in Touch</a>
+    {{ end }}
+  </aside>
+
+</article>
+{{ end }}

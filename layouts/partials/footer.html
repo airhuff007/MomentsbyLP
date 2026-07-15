@@ -1,0 +1,24 @@
+<footer role="contentinfo">
+  <nav aria-label="Footer navigation">
+    <ul role="list">
+      <li><a href="/family-photographer-boca-raton/">Family Photographer Boca Raton</a></li>
+      <li><a href="/branding-photographer-boca-raton/">Branding Photographer Boca Raton</a></li>
+      <li><a href="/headshots-boca-raton/">Headshots Boca Raton</a></li>
+      <li><a href="/couples-photography-boca-raton/">Couples Photographer Boca Raton</a></li>
+      <li><a href="/business-photography-boca-raton/">Business Photography Boca Raton</a></li>
+      <li><a href="/christmas-mini-sessions-boca-raton/">Christmas Mini Sessions Boca Raton</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+  </nav>
+
+  <address>
+    <p>Moments by LP Photography &mdash; Boca Raton, FL</p>
+    {{ with site.Params.phone }}<p><a href="tel:{{ . }}">{{ . }}</a></p>{{ end }}
+    {{ with site.Params.email }}<p><a href="mailto:{{ . }}">{{ . }}</a></p>{{ end }}
+  </address>
+
+  <p>Serving Boca Raton, Delray Beach, Boynton Beach, Palm Beach, Fort Lauderdale, Coral Springs, Parkland, and West Palm Beach.</p>
+
+  <p><small>&copy; {{ now.Year }} Moments by LP Photography. All rights reserved.</small></p>
+</footer>
