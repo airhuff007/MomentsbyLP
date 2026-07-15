@@ -18,6 +18,9 @@ params:
     instagram: "https://www.instagram.com/momentsbylp"
     facebook: ""
     pinterest: ""
+  mailerlite:
+    accountId: ""   # MailerLite → Account → API → Account ID
+    formId: ""      # MailerLite → Forms → your embedded form → ID in the embed code
 
 sitemap:
   changefreq: "weekly"
