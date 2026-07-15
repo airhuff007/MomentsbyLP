@@ -9,3 +9,6 @@ resources/_gen/
 # Editor
 .vscode/
 .idea/
+
+# Local Netlify folder
+.netlify
