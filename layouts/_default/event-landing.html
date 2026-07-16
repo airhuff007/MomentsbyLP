@@ -1,0 +1,257 @@
+{{ define "main" }}
+
+{{/* ══ EVENT HERO ══ */}}
+<section class="event-hero" aria-label="Content and Coffee — Event">
+  <div class="event-hero__inner">
+    <p class="event-hero__eyebrow">Moments by LP Presents</p>
+    <h1 class="event-hero__title">Content &amp; Coffee</h1>
+    <p class="event-hero__tagline">{{ .Params.eventTagline }}</p>
+    <div class="event-hero__meta">
+      <span>{{ .Params.eventDate }}</span>
+      <span class="event-hero__dot" aria-hidden="true"></span>
+      <span>{{ .Params.eventTime }}</span>
+      <span class="event-hero__dot" aria-hidden="true"></span>
+      <span>{{ .Params.eventLocation }}</span>
+    </div>
+    <div class="event-hero__ctas">
+      {{ if .Params.ticketURL }}
+      <a href="{{ .Params.ticketURL }}" class="btn btn--filled event-hero__cta" rel="noopener" target="_blank">Get Your Ticket</a>
+      {{ else }}
+      <a href="mailto:{{ site.Params.email }}?subject=Content %26 Coffee — September 27" class="btn btn--filled event-hero__cta">Reserve Your Spot</a>
+      {{ end }}
+      <a href="#event-pricing" class="btn event-hero__cta--outline">See Pricing</a>
+    </div>
+  </div>
+  <div class="event-hero__overlay" aria-hidden="true"></div>
+</section>
+
+
+{{/* ══ HOOK ══ */}}
+<section class="event-hook">
+  <div class="container">
+    <p class="event-hook__line">Come with an empty camera roll.</p>
+    <p class="event-hook__line event-hook__line--accent">Leave with a month of content.</p>
+  </div>
+</section>
+
+
+{{/* ══ OUTCOMES ══ */}}
+<section class="event-outcomes" aria-labelledby="outcomes-heading">
+  <div class="container">
+    <p class="eyebrow" style="text-align:center;">In Just Two Hours You Will</p>
+    <h2 id="outcomes-heading" class="section-title" style="text-align:center;">Walk Away With Everything</h2>
+    <ul class="event-outcomes__list" role="list">
+      <li class="event-outcome">
+        <span class="event-outcome__icon" aria-hidden="true">01</span>
+        <div>
+          <h3>Real Content, Ready to Post</h3>
+          <p>You&rsquo;ll film Reels, capture photos, and create Stories during the event&mdash;not just plan to. Leave with finished content for your feed.</p>
+        </div>
+      </li>
+      <li class="event-outcome">
+        <span class="event-outcome__icon" aria-hidden="true">02</span>
+        <div>
+          <h3>A Month of Ideas, Mapped Out</h3>
+          <p>We&rsquo;ll brainstorm together and you&rsquo;ll leave with 30 content ideas tailored to your business. No more staring at a blank screen.</p>
+        </div>
+      </li>
+      <li class="event-outcome">
+        <span class="event-outcome__icon" aria-hidden="true">03</span>
+        <div>
+          <h3>A System That Takes Under 30 Minutes</h3>
+          <p>Learn exactly how to create content consistently and effortlessly&mdash;without spending hours on it every week.</p>
+        </div>
+      </li>
+      <li class="event-outcome">
+        <span class="event-outcome__icon" aria-hidden="true">04</span>
+        <div>
+          <h3>Your Local Business Network</h3>
+          <p>Meet and connect with other South Florida entrepreneurs. Discover businesses, build relationships, and leave knowing people who want you to win.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+{{/* ══ EXPERIENCE ══ */}}
+<section class="event-schedule" aria-labelledby="schedule-heading">
+  <div class="container">
+    <p class="eyebrow" style="text-align:center;">The Experience</p>
+    <h2 id="schedule-heading" class="section-title" style="text-align:center;">What to Expect</h2>
+    <ol class="event-timeline" role="list">
+      <li class="event-timeline__item">
+        <span class="event-timeline__time">0:00 – 0:15</span>
+        <div class="event-timeline__content">
+          <h3>Arrive &amp; Connect</h3>
+          <p>Coffee, matcha, and a full charcuterie spread waiting for you. Introduce yourself, meet other business owners, and settle in.</p>
+        </div>
+      </li>
+      <li class="event-timeline__item">
+        <span class="event-timeline__time">0:15 – 0:30</span>
+        <div class="event-timeline__content">
+          <h3>Building Trust on Social</h3>
+          <p>A short, focused workshop on how social media has shifted and what actually works for local businesses today. No fluff.</p>
+        </div>
+      </li>
+      <li class="event-timeline__item">
+        <span class="event-timeline__time">0:30 – 0:45</span>
+        <div class="event-timeline__content">
+          <h3>Instagram Features Deep-Dive</h3>
+          <p>Reels, Stories, Carousels, Notes, Broadcast Channels, Collabs, trending audio&mdash;discover the tools you&rsquo;re probably not using yet.</p>
+        </div>
+      </li>
+      <li class="event-timeline__item">
+        <span class="event-timeline__time">0:45 – 1:00</span>
+        <div class="event-timeline__content">
+          <h3>Brainstorm Session</h3>
+          <p>Guided brainstorm. You&rsquo;ll leave this section with 30 content ideas for your specific business. Ideas you&rsquo;ll actually use.</p>
+        </div>
+      </li>
+      <li class="event-timeline__item event-timeline__item--featured">
+        <span class="event-timeline__time">1:00 – 2:00</span>
+        <div class="event-timeline__content">
+          <h3>Phones Out. Create Together.</h3>
+          <p>The magic hour. Talking head Reels, product shots, lifestyle content, flat lays, headshots&mdash;multiple stations set up so everyone leaves with fresh, varied content. Lauren is there to help every step of the way.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+
+{{/* ══ WHAT'S INCLUDED ══ */}}
+<section class="event-includes" aria-labelledby="includes-heading">
+  <div class="container">
+    <p class="eyebrow" style="text-align:center;">Every Ticket Includes</p>
+    <h2 id="includes-heading" class="section-title" style="text-align:center;">Everything You Need</h2>
+    <ul class="event-includes__grid" role="list">
+      <li>Complimentary coffee &amp; matcha</li>
+      <li>Curated charcuterie spread</li>
+      <li>Mini workshop &amp; workbook</li>
+      <li>30 brainstormed content ideas</li>
+      <li>Guided content creation hour</li>
+      <li>Multi-station photo &amp; video setup</li>
+      <li>Personal coaching from Lauren</li>
+      <li>South Florida business community</li>
+    </ul>
+  </div>
+</section>
+
+
+{{/* ══ PRICING ══ */}}
+<section class="event-pricing" id="event-pricing" aria-labelledby="pricing-heading">
+  <div class="container">
+    <p class="eyebrow" style="text-align:center;">Invest In Your Brand</p>
+    <h2 id="pricing-heading" class="section-title" style="text-align:center;">Choose Your Ticket</h2>
+    <p class="event-pricing__note">Spots are limited to keep this intentional and high-quality. Early bird pricing won&rsquo;t last.</p>
+    <div class="event-pricing__grid">
+
+      <article class="price-card">
+        <p class="price-card__label">Early Bird</p>
+        <p class="price-card__price">${{ .Params.earlyBirdPrice }}</p>
+        <ul class="price-card__features" role="list">
+          <li>Full 2-hour experience</li>
+          <li>Coffee, matcha &amp; charcuterie</li>
+          <li>Workshop + brainstorm session</li>
+          <li>Content creation hour</li>
+          <li>Community &amp; connections</li>
+        </ul>
+        {{ if .Params.ticketURL }}
+        <a href="{{ .Params.ticketURL }}" class="btn btn--filled" rel="noopener" target="_blank">Get Early Bird Ticket</a>
+        {{ else }}
+        <a href="mailto:{{ site.Params.email }}?subject=Content %26 Coffee — Early Bird" class="btn btn--filled">Reserve Early Bird</a>
+        {{ end }}
+      </article>
+
+      <article class="price-card price-card--featured">
+        <p class="price-card__badge">Most Popular</p>
+        <p class="price-card__label">General Admission</p>
+        <p class="price-card__price">${{ .Params.regularPrice }}</p>
+        <ul class="price-card__features" role="list">
+          <li>Full 2-hour experience</li>
+          <li>Coffee, matcha &amp; charcuterie</li>
+          <li>Workshop + brainstorm session</li>
+          <li>Content creation hour</li>
+          <li>Community &amp; connections</li>
+        </ul>
+        {{ if .Params.ticketURL }}
+        <a href="{{ .Params.ticketURL }}" class="btn btn--filled" rel="noopener" target="_blank">Get Your Ticket</a>
+        {{ else }}
+        <a href="mailto:{{ site.Params.email }}?subject=Content %26 Coffee — General" class="btn btn--filled">Reserve Your Spot</a>
+        {{ end }}
+      </article>
+
+      <article class="price-card price-card--vip">
+        <p class="price-card__label">VIP</p>
+        <p class="price-card__price">${{ .Params.vipPrice }}</p>
+        <ul class="price-card__features" role="list">
+          <li>Everything in General Admission</li>
+          <li>Professional headshot by Lauren</li>
+          <li>Instagram profile review &amp; feedback</li>
+          <li>Priority filming assistance</li>
+          <li>Behind-the-scenes content</li>
+        </ul>
+        {{ if .Params.ticketURL }}
+        <a href="{{ .Params.ticketURL }}" class="btn" rel="noopener" target="_blank">Get VIP Access</a>
+        {{ else }}
+        <a href="mailto:{{ site.Params.email }}?subject=Content %26 Coffee — VIP" class="btn">Reserve VIP</a>
+        {{ end }}
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+{{/* ══ HOST ══ */}}
+<section class="event-host" aria-labelledby="host-heading">
+  <div class="container">
+    <div class="event-host__grid">
+      <div class="event-host__image">
+        <img
+          src="/images/lauren-portrait.jpg"
+          alt="Lauren — photographer and host of Content and Coffee Boca Raton"
+          loading="lazy"
+          width="480"
+          height="600"
+        >
+      </div>
+      <div class="event-host__text">
+        <p class="eyebrow">Your Host</p>
+        <h2 id="host-heading">Hi, I&rsquo;m Lauren</h2>
+        <p>
+          I&rsquo;m a Boca Raton photographer and creative who has spent years helping South Florida
+          businesses show up authentically on social media. I know firsthand how overwhelming content
+          creation can feel&mdash;which is exactly why I created Content &amp; Coffee.
+        </p>
+        <p>
+          This isn&rsquo;t a lecture. It&rsquo;s a creative session where you leave with something
+          real: content for your business, ideas in your notes, and a community you actually want
+          to be part of.
+        </p>
+        <a href="/about/" class="text-link">Learn More About Lauren &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{{/* ══ BOTTOM CTA ══ */}}
+<section class="event-cta-bottom" aria-label="Get your ticket">
+  <div class="container">
+    <p class="eyebrow">{{ .Params.eventDate }} &middot; {{ .Params.eventLocation }}</p>
+    <h2>Ready to Stop Overthinking and Start Creating?</h2>
+    <p>Spots are limited. Come with your phone. Leave with content.</p>
+    <div class="event-cta-bottom__buttons">
+      {{ if .Params.ticketURL }}
+      <a href="{{ .Params.ticketURL }}" class="btn btn--filled" rel="noopener" target="_blank">Get Your Ticket</a>
+      {{ else }}
+      <a href="mailto:{{ site.Params.email }}?subject=Content %26 Coffee — September 27" class="btn btn--filled">Reserve Your Spot</a>
+      {{ end }}
+      <p class="event-cta-bottom__detail">{{ .Params.eventLocationDetail }}</p>
+    </div>
+  </div>
+</section>
+
+{{ end }}
