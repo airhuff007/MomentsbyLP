@@ -1,4 +1,4 @@
-baseURL: "https://momentsbylp.com/"
+baseURL: "https://moments-by-lp.netlify.app/"
 locale: "en-us"
 title: "Moments by LP | Boca Raton Photographer"
 
@@ -8,7 +8,7 @@ params:
   description: "Boca Raton photographer specializing in family, branding, and lifestyle photography in South Florida. Serving Boca Raton, Delray Beach, Palm Beach, and Fort Lauderdale."
   businessName: "Moments by LP Photography"
   phone: ""
-  email: "hello@momentsbylp.com"
+  email: ""
   bookingURL: ""
   city: "Boca Raton"
   state: "FL"

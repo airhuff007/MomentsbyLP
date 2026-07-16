@@ -13,7 +13,7 @@ Ready to work together? Lauren would love to hear from you.
 
 Whether you're looking for a family photographer in Boca Raton, a brand session, professional headshots, or something else entirely — reach out and let's make it happen.
 
-**Email:** [hello@momentsbylp.com](mailto:hello@momentsbylp.com)
+**Email:** Coming soon
 
 Lauren typically responds within 24–48 hours.
 
