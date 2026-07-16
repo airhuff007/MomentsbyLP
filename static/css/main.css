@@ -146,12 +146,33 @@ p:last-child { margin-bottom: 0; }
    NAVIGATION
    ══════════════════════════════════════════ */
 header[role="banner"] {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 200;
+  height: var(--nav-height);
+  background: transparent;
+  border-bottom: none;
+  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* After scrolling past the hero video */
+header[role="banner"].nav-scrolled {
   background: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
-  height: var(--nav-height);
+  box-shadow: 0 1px 16px rgba(0,0,0,0.06);
+}
+
+/* Inner pages always have solid nav (no .home class on body) */
+body:not(.home) header[role="banner"] {
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Inner pages need top padding so content clears the fixed nav */
+body:not(.home) main {
+  padding-top: var(--nav-height);
 }
 
 .nav-inner {
@@ -172,6 +193,12 @@ header[role="banner"] {
   letter-spacing: 0.04em;
   white-space: nowrap;
   flex-shrink: 0;
+  color: rgba(255,255,255,0.95);
+  transition: color 0.35s ease;
+}
+header[role="banner"].nav-scrolled .nav-brand,
+body:not(.home) .nav-brand {
+  color: var(--color-text);
 }
 
 nav[aria-label="Main navigation"] { display: contents; }
@@ -188,12 +215,24 @@ nav[aria-label="Main navigation"] { display: contents; }
   font-size: 0.78rem;
   font-weight: 400;
   letter-spacing: 0.06em;
-  color: var(--color-text);
+  color: rgba(255,255,255,0.9);
   padding: 0.4rem 0.75rem;
   transition: color 0.2s;
   white-space: nowrap;
 }
-.nav-primary > li > a:hover { color: var(--color-accent); }
+.nav-primary > li > a:hover { color: rgba(255,255,255,0.6); }
+
+/* Scrolled / inner pages — dark text */
+header[role="banner"].nav-scrolled .nav-primary > li > a,
+header[role="banner"].nav-scrolled .nav-primary > li > button,
+body:not(.home) .nav-primary > li > a,
+body:not(.home) .nav-primary > li > button {
+  color: var(--color-text);
+}
+header[role="banner"].nav-scrolled .nav-primary > li > a:hover,
+body:not(.home) .nav-primary > li > a:hover {
+  color: var(--color-accent);
+}
 
 /* ── Dropdown ── */
 .nav-has-dropdown { position: relative; }
@@ -239,11 +278,22 @@ nav[aria-label="Main navigation"] { display: contents; }
   font-weight: 500 !important;
   letter-spacing: 0.12em !important;
   text-transform: uppercase;
-  border: 1px solid var(--color-text);
+  border: 1px solid rgba(255,255,255,0.7) !important;
+  color: rgba(255,255,255,0.9) !important;
   padding: 0.5rem 1.25rem !important;
-  transition: background 0.2s, color 0.2s !important;
+  transition: background 0.2s, color 0.2s, border-color 0.35s !important;
 }
 .nav-cta:hover {
+  background: rgba(255,255,255,0.15) !important;
+  color: #fff !important;
+}
+header[role="banner"].nav-scrolled .nav-cta,
+body:not(.home) .nav-cta {
+  border-color: var(--color-text) !important;
+  color: var(--color-text) !important;
+}
+header[role="banner"].nav-scrolled .nav-cta:hover,
+body:not(.home) .nav-cta:hover {
   background: var(--color-text) !important;
   color: var(--color-bg) !important;
 }
@@ -255,7 +305,7 @@ nav[aria-label="Main navigation"] { display: contents; }
 .hero-video {
   position: relative;
   width: 100%;
-  height: calc(100vh - var(--nav-height));
+  height: 100vh;
   overflow: hidden;
   background: #1C1C1A;
 }
@@ -296,7 +346,9 @@ nav[aria-label="Main navigation"] { display: contents; }
 .hero-video__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.25) 0%, transparent 50%);
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, transparent 25%),
+    linear-gradient(to top,    rgba(0,0,0,0.25) 0%, transparent 40%);
   pointer-events: none;
 }
 

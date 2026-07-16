@@ -3,7 +3,7 @@
 <head>
   {{ partial "head.html" . }}
 </head>
-<body>
+<body{{ if .IsHome }} class="home"{{ end }}>
   {{ partial "nav.html" . }}
 
   <main id="main-content" role="main">
@@ -23,5 +23,18 @@
     ml('account', '{{ . }}');
   </script>
   {{ end }}
+
+  {{/* ── Nav scroll behaviour (homepage only) ── */}}
+  <script>
+    (function() {
+      var header = document.querySelector('header[role="banner"]');
+      if (!document.body.classList.contains('home')) return;
+      function update() {
+        header.classList.toggle('nav-scrolled', window.scrollY > 60);
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>
 </body>
 </html>
