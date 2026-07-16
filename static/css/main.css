@@ -265,8 +265,10 @@ nav[aria-label="Main navigation"] { display: contents; }
   inset: 0;
   width: 100%;
   height: 100%;
+  /* object-fit:cover scales the vertical video to fill
+     the landscape container width, cropping top & bottom */
   object-fit: cover;
-  object-position: center;
+  object-position: center 20%;
 }
 
 /* Placeholder shown while video not yet uploaded */
