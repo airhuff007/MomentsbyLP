@@ -315,10 +315,14 @@ body:not(.home) .nav-cta:hover {
   inset: 0;
   width: 100%;
   height: 100%;
-  /* object-fit:cover scales the vertical video to fill
-     the landscape container width, cropping top & bottom */
+  z-index: 1;
   object-fit: cover;
   object-position: center 20%;
+}
+
+.hero-video__overlay,
+.hero-video__scroll {
+  z-index: 2;
 }
 
 /* Placeholder shown while video not yet uploaded */
