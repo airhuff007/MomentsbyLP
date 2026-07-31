@@ -1512,12 +1512,9 @@ nav[aria-label="Breadcrumb"] a:hover { color: var(--color-text); }
   margin-bottom: 1.5rem;
 }
 
-.book-calendly__embed {
-  width: 100%;
-  border: none;
-  overflow: hidden;
-  min-height: 560px;
-  display: block;
+.book-calendly__cta {
+  display: inline-block;
+  margin-top: 1rem;
 }
 
 .book-investment {
@@ -1534,11 +1531,6 @@ nav[aria-label="Breadcrumb"] a:hover { color: var(--color-text); }
 
 
 /* ── Responsive ── */
-@media (min-width: 640px) {
-  .book-calendly__embed {
-    min-height: 640px;
-  }
-}
 
 @media (min-width: 900px) {
   .book-grid {
