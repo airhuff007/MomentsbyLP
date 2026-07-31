@@ -1,11 +1,11 @@
 baseURL: "https://moments-by-lp.com/"
 locale: "en-us"
-title: "Moments by LP | Boca Raton Photographer"
+title: "Moments by LP | Commercial Brand Photographer Boca Raton"
 
 enableRobotsTXT: true
 
 params:
-  description: "Boca Raton photographer specializing in family, branding, and lifestyle photography in South Florida. Serving Boca Raton, Delray Beach, Palm Beach, and Fort Lauderdale."
+  description: "Commercial brand photographer in Boca Raton, FL specializing in lifestyle brands — beauty, jewelry, coffee, fashion, wellness, and hospitality. Premium photography and content creation for South Florida businesses."
   businessName: "Moments by LP Photography"
   phone: ""
   email: "momentsbylpstudios@gmail.com"
@@ -21,6 +21,17 @@ params:
   mailerlite:
     accountId: ""   # MailerLite → Account → API → Account ID
     formId: ""      # MailerLite → Forms → your embedded form → ID in the embed code
+
+  # ── Shopify Integration ──────────────────────────────────────────────────
+  # Public values only. Never put Admin API keys or private tokens here.
+  # See docs/shopify-integration.md for setup instructions.
+  shopify:
+    enabled: true         # Set to false to hide all shop UI site-wide
+    storeDomain: "PLACEHOLDER.myshopify.com"          # e.g. moments-by-lp.myshopify.com
+    storefrontToken: "PLACEHOLDER_STOREFRONT_TOKEN"   # Shopify → Apps → Custom App → Storefront API token
+    currency: "USD"
+    cartType: "drawer"    # drawer | page
+    showHomepageSection: true   # Show "Made for People Who Create" section on homepage
 
 sitemap:
   changefreq: "weekly"

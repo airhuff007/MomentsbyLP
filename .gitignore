@@ -12,3 +12,6 @@ resources/_gen/
 
 # Local Netlify folder
 .netlify
+
+# Local environment overrides — NEVER commit secrets
+.env

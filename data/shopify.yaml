@@ -1,0 +1,18 @@
+# Shopify Configuration — Moments by LP
+# Public values only. Safe to commit.
+# All values here are also available in hugo.yaml under params.shopify
+# See docs/shopify-integration.md for setup instructions.
+
+storeDomain: "PLACEHOLDER.myshopify.com"
+storefrontToken: "PLACEHOLDER_STOREFRONT_TOKEN"
+currency: "USD"
+cartType: "drawer"
+
+# Collection IDs (Shopify Admin → Products → Collections → click collection → URL ID)
+collections:
+  apparel:    "PLACEHOLDER_APPAREL_COLLECTION_ID"
+  resources:  "PLACEHOLDER_RESOURCES_COLLECTION_ID"
+  presets:    "PLACEHOLDER_PRESETS_COLLECTION_ID"
+  prints:     "PLACEHOLDER_PRINTS_COLLECTION_ID"
+  events:     "PLACEHOLDER_EVENTS_COLLECTION_ID"
+  giftCards:  "PLACEHOLDER_GIFT_CARDS_COLLECTION_ID"

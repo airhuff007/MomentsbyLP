@@ -1,11 +1,14 @@
 ---
-title: "Boca Raton Photographer | Moments by LP"
-description: "Boca Raton photographer specializing in family, branding, and lifestyle photography in South Florida. Serving Boca Raton, Delray Beach, Palm Beach, and Fort Lauderdale."
+title: "Commercial Brand Photographer Boca Raton | Moments by LP"
+description: "Commercial brand photographer in Boca Raton specializing in lifestyle brands — beauty, jewelry, coffee, fashion, wellness, and hospitality. Premium photography and content creation for South Florida businesses."
 keywords:
-  - "Boca Raton photographer"
-  - "family photographer Boca Raton"
+  - "commercial brand photographer Boca Raton"
   - "brand photographer Boca Raton"
-  - "lifestyle photographer South Florida"
-  - "portrait photographer Boca Raton"
+  - "product photographer South Florida"
+  - "lifestyle brand photography Boca Raton"
+  - "jewelry photographer Florida"
+  - "skincare brand photographer South Florida"
+  - "luxury brand photographer Boca Raton"
+  - "commercial photographer South Florida"
 ogImage: "/images/og-default.jpg"
 ---

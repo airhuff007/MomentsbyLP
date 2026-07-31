@@ -985,6 +985,721 @@ nav[aria-label="Breadcrumb"] a:hover { color: var(--color-text); }
 
 
 /* ══════════════════════════════════════════
+   COMMERCIAL PAGES
+   ══════════════════════════════════════════ */
+
+/* ── Work With Us — Paths ── */
+.wwu-paths {
+  padding: var(--section-pad) 0;
+  background: var(--color-bg-alt);
+}
+
+.wwu-paths .container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+
+.wwu-paths__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: clamp(16px, 2.5vw, 32px);
+  margin-top: 3.5rem;
+}
+
+.wwu-path-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: border-color 0.2s;
+}
+
+.wwu-path-card--primary {
+  border-color: var(--color-text);
+}
+
+.wwu-path-card__label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0;
+}
+
+.wwu-path-card h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.wwu-path-card p {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+
+.wwu-path-card__offers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1rem;
+}
+
+.wwu-path-card__offers li {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.4;
+}
+
+.wwu-path-card__offers li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+/* ── Investment Overview ── */
+.wwu-investment {
+  padding: var(--section-pad) 0;
+}
+
+.wwu-investment .container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+
+.wwu-investment__note {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  text-align: center;
+  max-width: 560px;
+  margin: -1rem auto 3rem;
+  line-height: 1.7;
+}
+
+.wwu-investment__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+}
+
+.wwu-investment__item {
+  background: var(--color-bg);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.wwu-investment__item--featured {
+  background: var(--color-bg-alt);
+}
+
+.wwu-investment__category {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.wwu-investment__range {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  color: var(--color-text);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.wwu-investment__range span {
+  font-size: 0.85rem;
+  font-family: var(--font-sans);
+  color: var(--color-muted);
+}
+
+.wwu-investment__desc {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── Process section (used across multiple pages) ── */
+.wwu-process {
+  padding: var(--section-pad) 0;
+  background: var(--color-bg-alt);
+}
+
+.wwu-process .container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.process-steps--horizontal {
+  flex-direction: row;
+  gap: clamp(16px, 3vw, 40px);
+  align-items: flex-start;
+  max-width: var(--max-width);
+}
+
+.process-step {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding: 2rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.process-step:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.process-steps--horizontal .process-step {
+  flex-direction: column;
+  flex: 1;
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  gap: 0.75rem;
+}
+
+.process-steps--horizontal .process-step:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.process-step--vertical {
+  flex-direction: row;
+}
+
+.process-step--large {
+  padding: 2.5rem 0;
+}
+
+.process-step__num {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  flex-shrink: 0;
+  min-width: 28px;
+  margin-top: 0.3rem;
+}
+
+.process-steps--horizontal .process-step__num {
+  font-size: 1.25rem;
+  letter-spacing: 0;
+  font-family: var(--font-serif);
+  color: var(--color-accent);
+  min-width: auto;
+  margin-top: 0;
+}
+
+.process-step h3 {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.process-step p {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.process-step__detail {
+  font-family: var(--font-sans);
+  font-size: 0.75rem !important;
+  letter-spacing: 0.06em;
+  color: var(--color-accent) !important;
+  margin-top: 0.5rem !important;
+}
+
+/* ── Brand Launch scenarios ── */
+.bl-scenarios {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(16px, 2.5vw, 32px);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.bl-scenario {
+  border: 1px solid var(--color-border);
+  padding: 2rem;
+  background: var(--color-bg);
+}
+
+.bl-scenario__industry {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+}
+
+.bl-scenario p:last-child {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Brand Launch includes ── */
+.bl-includes {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bl-includes__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.bl-include-item {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 2rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.bl-include-item:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.bl-include-item__num {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--color-bg);
+  background: var(--color-text);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.bl-include-item h3 {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.bl-include-item p {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Brand Launch investment ── */
+.bl-investment {
+  border: 1px solid var(--color-border);
+  padding: 3rem;
+  text-align: center;
+  background: var(--color-bg-alt);
+}
+
+.bl-investment__range {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+.bl-investment__note {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  line-height: 1.75;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* ── Product Photography options ── */
+.pp-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(16px, 3vw, 40px);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.pp-option {
+  border: 1px solid var(--color-border);
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: border-color 0.2s;
+}
+
+.pp-option--featured {
+  border-color: var(--color-text);
+}
+
+.pp-option h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.pp-option__price {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  color: var(--color-text);
+  line-height: 1;
+  margin: 0;
+}
+
+.pp-option > p:not(.pp-option__price):not(.eyebrow) {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Book a Brand Call ── */
+.book-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 6vw, 80px);
+  align-items: flex-start;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+
+.book-details {
+  padding: 2rem 0;
+}
+
+.book-details h2 {
+  margin-bottom: 2rem;
+}
+
+.book-qualifier {
+  border: 1px solid var(--color-border);
+  padding: 1.75rem;
+  margin-bottom: 1.25rem;
+  background: var(--color-bg);
+}
+
+.book-qualifier--alt {
+  background: var(--color-bg-alt);
+}
+
+.book-qualifier h3 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.book-qualifier__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.book-qualifier__list li {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.book-qualifier__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.book-what h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.book-calendly {
+  position: sticky;
+  top: calc(var(--nav-height) + 2rem);
+  padding: 2rem 0;
+}
+
+.book-calendly h2 {
+  margin-bottom: 1.5rem;
+}
+
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .wwu-investment__grid { grid-template-columns: repeat(3, 1fr); }
+  .wwu-paths__grid { grid-template-columns: 1fr; max-width: 540px; margin-left: auto; margin-right: auto; }
+}
+
+@media (max-width: 900px) {
+  .bl-scenarios { grid-template-columns: 1fr; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .pp-options { grid-template-columns: 1fr; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .book-grid { grid-template-columns: 1fr; }
+  .book-calendly { position: static; }
+  .process-steps--horizontal { flex-direction: column; }
+  .process-steps--horizontal .process-step { width: 100%; }
+}
+
+@media (max-width: 640px) {
+  .wwu-investment__grid { grid-template-columns: 1fr 1fr; }
+  .bl-include-item { gap: 1rem; }
+  .bl-investment { padding: 2rem 1.25rem; }
+}
+
+@media (max-width: 480px) {
+  .wwu-investment__grid { grid-template-columns: 1fr; }
+}
+
+
+/* ══════════════════════════════════════════
+   PACKAGES LANDING PAGE
+   ══════════════════════════════════════════ */
+
+/* Page Hero */
+.pkg-hero {
+  padding: calc(var(--nav-height) + clamp(56px, 8vw, 112px)) var(--container-pad) clamp(56px, 8vw, 96px);
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.pkg-hero h1 {
+  margin-bottom: 1.25rem;
+}
+
+.pkg-hero__subtitle {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: var(--color-muted);
+  max-width: 580px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.75;
+}
+
+.pkg-hero__ctas {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Industries strip */
+.pkg-industries {
+  padding: clamp(40px, 5vw, 64px) var(--container-pad);
+  background: var(--color-bg-alt);
+  text-align: center;
+}
+
+.pkg-industries__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.pkg-industries__tag {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+  border: 1px solid var(--color-border);
+  padding: 0.4rem 1rem;
+}
+
+/* Package sections */
+.pkg-section {
+  padding: var(--section-pad) 0;
+}
+
+.pkg-section--alt {
+  background: var(--color-bg-alt);
+}
+
+.pkg-section .container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+
+.pkg-section__header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.pkg-section__header h2 {
+  margin-bottom: 0.75rem;
+}
+
+.pkg-section__header p {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Session cards */
+.session-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2.5vw, 28px);
+}
+
+.session-card {
+  border: 1px solid var(--color-border);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: border-color 0.2s;
+}
+
+.session-card:hover {
+  border-color: var(--color-accent);
+}
+
+.session-card__name {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.session-card__price {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 1;
+  margin: 0;
+}
+
+.session-card h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.session-card__desc {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+
+.session-card__includes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1rem;
+  margin: 0;
+}
+
+.session-card__includes li {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.45;
+}
+
+.session-card__includes li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+@media (max-width: 1024px) {
+  .session-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .session-grid { grid-template-columns: 1fr; }
+  .pkg-hero__ctas { flex-direction: column; align-items: center; }
+}
+
+
+/* ══════════════════════════════════════════
    EVENT LANDING — Content & Coffee
    ══════════════════════════════════════════ */
 
