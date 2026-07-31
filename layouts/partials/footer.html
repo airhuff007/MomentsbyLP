@@ -12,6 +12,7 @@
       <p>Serving Boca Raton, Delray Beach, Boynton Beach, Palm Beach, Fort Lauderdale, Coral Springs, Parkland, and West Palm Beach.</p>
     </div>
 
+    {{ if not (in (slice "/book/" "/book-a-brand-call/") .RelPermalink) }}
     <div class="footer-col">
       <p class="footer-col-heading">Photography</p>
       <nav aria-label="Photography services">
@@ -58,6 +59,7 @@
         </ul>
       </nav>
     </div>
+    {{ end }}
 
   </div>
 
