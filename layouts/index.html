@@ -14,59 +14,21 @@
 </section>
 
 
-{{/* ══ 2. QUOTE BLOCK 1 ══ */}}
-<section class="quote-block" aria-label="Brand quote">
+{{/* ══ 2. QUOTE INSERT ══ */}}
+<section class="quote-block quote-block--insert" aria-label="Photography philosophy">
   <blockquote>
-    <p>&ldquo;Premium commercial photography and content for lifestyle brands across South Florida.&rdquo;</p>
+    <p>&ldquo;The best photos aren&rsquo;t taken. They&rsquo;re created through trust, ease, and making people forget there&rsquo;s a camera in the room.&rdquo;</p>
   </blockquote>
 </section>
 
 
-{{/* ══ 3. ABOUT LAUREN ══ */}}
-<section class="about-intro" aria-labelledby="about-intro-heading">
-  <div class="about-intro__grid">
+{{/* ══ 3. ABOUT LAUREN (full about page content) ══ */}}
+{{ partial "about-content.html" (dict "afterVideo" true "skipQuote" true) }}
 
-    <div class="about-intro__image">
-      <img
-        src="/images/lauren-portrait.jpg"
-        alt="Lauren — Boca Raton photographer and creative behind Moments by LP"
-        loading="lazy"
-        width="600"
-        height="750"
-      >
-    </div>
-
-    <div class="about-intro__text">
-      <p class="eyebrow">About Lauren</p>
-      <h2 id="about-intro-heading">Hi, I&rsquo;m Lauren</h2>
-      <div class="about-intro__body">
-        <p>
-          I&rsquo;m a commercial brand photographer based in Boca Raton, Florida. I create
-          premium lifestyle imagery for beauty brands, jewelers, coffee shops, fashion
-          boutiques, wellness studios, and hospitality brands across South Florida.
-        </p>
-        <p>
-          My work sits at the intersection of photography and creative direction — helping
-          brands build a complete visual library that converts on their website, social media,
-          and advertising. If you want imagery that feels elevated and intentional, let&rsquo;s build something together.
-        </p>
-      </div>
-      <a href="/about/" class="text-link">Read My Story &rarr;</a>
-    </div>
-
-  </div>
-</section>
+{{ partial "editorial-animations.html" . }}
 
 
-{{/* ══ 4. QUOTE BLOCK 2 ══ */}}
-<section class="quote-block quote-block--alt" aria-label="Brand philosophy">
-  <blockquote>
-    <p>&ldquo;Beautiful photography builds trust. Trust builds revenue. That&rsquo;s the business case for investing in your brand&rsquo;s imagery.&rdquo;</p>
-  </blockquote>
-</section>
-
-
-{{/* ══ 5. THREE MAIN OFFERS ══ */}}
+{{/* ══ THREE MAIN OFFERS ══ */}}
 <section class="offers" aria-labelledby="offers-heading">
   <div class="container">
     <p class="eyebrow" style="text-align:center;">Photography &amp; Content</p>

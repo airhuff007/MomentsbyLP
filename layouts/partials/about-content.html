@@ -1,0 +1,177 @@
+<div class="about-page{{ with .afterVideo }} about-page--home{{ end }}">
+
+  {{ partial "editorial-cameras.html" . }}
+
+  {{/* ══ HERO ══ */}}
+  <section class="pkg-hero about-hero{{ with .afterVideo }} about-hero--after-video{{ end }}" aria-labelledby="about-heading">
+    <div class="about-hero__bg" aria-hidden="true">
+      <img
+        src="/images/lauren-garden.jpg"
+        alt=""
+        width="1200"
+        height="800"
+      >
+    </div>
+    <div class="about-hero__overlay" aria-hidden="true"></div>
+    <div class="container about-hero__inner">
+      <p class="eyebrow about-reveal" data-delay="0">Boca Raton &mdash; South Florida</p>
+      <h1 id="about-heading" class="about-reveal" data-delay="100">Hi, I&rsquo;m Lauren</h1>
+      <p class="pkg-hero__lead about-reveal" data-delay="200">Photographer. Creative director. Storyteller.</p>
+      <p class="pkg-hero__subtitle about-reveal" data-delay="300">
+        I&rsquo;m a commercial brand photographer based in Boca Raton, creating premium lifestyle imagery
+        for beauty, jewelry, coffee, fashion, wellness, and hospitality brands across South Florida.
+      </p>
+      <div class="pkg-hero__ctas about-reveal" data-delay="420">
+        <a href="/work-with-us/" class="btn btn--filled">Work With Me</a>
+        <a href="/book-a-brand-call/" class="btn">Book a Call</a>
+      </div>
+    </div>
+  </section>
+
+
+  {{/* ══ INTRO ══ */}}
+  <section class="about-intro about-page__section" aria-labelledby="about-story-heading">
+    <div class="about-intro__grid">
+
+      <div class="about-intro__image about-reveal about-reveal--left">
+        <div class="about-intro__image-frame">
+          <img
+            class="about-parallax-img"
+            src="/images/lauren-portrait.jpg"
+            alt="Lauren — Boca Raton photographer and creative behind Moments by LP"
+            loading="lazy"
+            width="600"
+            height="750"
+          >
+        </div>
+      </div>
+
+      <div class="about-intro__text about-reveal about-reveal--right" data-delay="120">
+        <p class="eyebrow">My Story</p>
+        <h2 id="about-story-heading">More Than a Photographer</h2>
+        <div class="about-intro__body">
+          <p>
+            I didn&rsquo;t pick up a camera because I wanted a career. I picked one up because I noticed
+            that the moments that matter most have a way of slipping past unnoticed.
+          </p>
+          <p>
+            Photography is how I slow that down. Today, I help lifestyle brands show up with imagery
+            that builds trust, tells their story, and converts on every channel that matters.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  {{/* ══ QUOTE ══ */}}
+  {{ if not .skipQuote }}
+  <section class="quote-block quote-block--alt about-page__section about-quote about-reveal about-reveal--scale" aria-label="Photography philosophy">
+    <blockquote>
+      <p>&ldquo;The best photos aren&rsquo;t taken. They&rsquo;re created through trust, ease, and making people forget there&rsquo;s a camera in the room.&rdquo;</p>
+    </blockquote>
+  </section>
+  {{ end }}
+
+
+  {{/* ══ WHAT I BELIEVE ══ */}}
+  <section class="pkg-section about-page__section" aria-labelledby="about-believe-heading">
+    <div class="container">
+      <div class="pkg-section__header about-reveal">
+        <p class="eyebrow">What I Believe</p>
+        <h2 id="about-believe-heading">How I Approach Every Project</h2>
+      </div>
+
+      <div class="pb-includes-grid pb-includes-grid--3 about-stagger">
+
+        <article class="pb-include-block about-reveal" data-delay="0">
+          <h3>Story First</h3>
+          <p>Every brand has a story worth telling well. Not a generic story. Their story. I build shoots around that.</p>
+        </article>
+
+        <article class="pb-include-block about-reveal" data-delay="120">
+          <h3>Feel Something</h3>
+          <p>Images should make you feel something, not just look good on a wall or in a feed. That&rsquo;s what converts.</p>
+        </article>
+
+        <article class="pb-include-block about-reveal" data-delay="240">
+          <h3>Full Production</h3>
+          <p>Creative direction, models, props, and production. I handle the details so you can focus on your brand.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  {{/* ══ BOCA RATON ══ */}}
+  <section class="pkg-section pkg-section--alt about-page__section" aria-labelledby="about-boca-heading">
+    <div class="container">
+      <div class="about-boca">
+        <div class="about-boca__text about-reveal about-reveal--left">
+          <p class="eyebrow">Life in Boca Raton</p>
+          <h2 id="about-boca-heading">South Florida Is My Studio</h2>
+          <p class="about-reveal" data-delay="80">
+            I live in Boca Raton and I love it here. The light is different in South Florida than anywhere
+            else I&rsquo;ve been. That golden hour on the beach is something you have to experience to understand.
+          </p>
+          <p class="about-reveal" data-delay="160">
+            When I&rsquo;m not shooting, you&rsquo;ll find me at a local coffee shop, exploring Delray Beach,
+            or walking Spanish River Park at sunset.
+          </p>
+        </div>
+        <div class="about-boca__favorites about-reveal about-reveal--right" data-delay="120">
+          <h3>Local Favorites</h3>
+          <ul role="list" class="pb-planning__list pb-planning__list--compact">
+            <li>Coffee shops with great natural light</li>
+            <li>Delray Beach restaurant scene</li>
+            <li>Spanish River Park at golden hour</li>
+            <li>Morikami Museum gardens</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {{/* ══ MISSION ══ */}}
+  <section class="pkg-section about-page__section" aria-labelledby="about-mission-heading">
+    <div class="container">
+      <div class="pkg-section__header about-reveal">
+        <p class="eyebrow">Beyond the Camera</p>
+        <h2 id="about-mission-heading">The Moments by LP Mission</h2>
+        <p>Moments by LP isn&rsquo;t just a photography studio. It&rsquo;s a platform for South Florida stories. Photography is the entry point. Community is the mission.</p>
+      </div>
+
+      <div class="about-mission__grid about-stagger">
+        <a href="/magazine/" class="about-mission__card about-reveal" data-delay="0">
+          <p class="eyebrow">Magazine</p>
+          <h3>Moments by LP Magazine</h3>
+          <p>Local businesses, creators, and places that deserve to be known.</p>
+          <span class="text-link">Read the Magazine &rarr;</span>
+        </a>
+        <a href="/creator-community/" class="about-mission__card about-reveal" data-delay="140">
+          <p class="eyebrow">Community</p>
+          <h3>Creator Community</h3>
+          <p>Supporting photographers and creatives building their craft in South Florida.</p>
+          <span class="text-link">Join the Community &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  {{/* ══ CTA ══ */}}
+  <section class="event-cta-bottom about-page__section" aria-label="Work with Lauren">
+    <div class="container about-reveal about-reveal--scale">
+      <p class="eyebrow">Let&rsquo;s Work Together</p>
+      <h2>Ready to Build Something?</h2>
+      <p>Whether you&rsquo;re launching a brand, refreshing your content, or growing your online presence, I&rsquo;d love to connect.</p>
+      <div class="event-cta-bottom__buttons">
+        <a href="/book-a-brand-call/" class="btn btn--light">Book a Discovery Call</a>
+      </div>
+    </div>
+  </section>
+
+</div>
