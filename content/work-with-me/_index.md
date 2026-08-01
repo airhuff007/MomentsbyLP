@@ -8,4 +8,6 @@ keywords:
   - "monthly content partnership photographer"
   - "personal brand photographer South Florida"
 ogImage: "/images/og-default.jpg"
+aliases:
+  - /work-with-us/
 ---

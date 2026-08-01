@@ -7,6 +7,16 @@
   HUGO_ENVIRONMENT = "production"
 
 [[redirects]]
+  from = "/work-with-us"
+  to = "/work-with-me/"
+  status = 301
+
+[[redirects]]
+  from = "/work-with-us/"
+  to = "/work-with-me/"
+  status = 301
+
+[[redirects]]
   from = "/*"
   to = "/404.html"
   status = 404
