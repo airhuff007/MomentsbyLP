@@ -1063,28 +1063,6 @@ nav[aria-label="Breadcrumb"] a:hover { color: var(--color-text); }
     margin-top: 0.75rem;
   }
 
-  body.home .home-panel__scroll {
-    flex: 0 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.4rem;
-    margin-top: 0.75rem;
-    color: var(--color-muted);
-    font-family: var(--font-sans);
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-
-  body.home .home-panel__scroll::after {
-    content: '';
-    display: block;
-    width: 1px;
-    height: 28px;
-    background: var(--color-border);
-  }
-
   body.home .about-page--home .about-hero--after-video.pkg-hero {
     min-height: 100svh;
     min-height: 100dvh;
