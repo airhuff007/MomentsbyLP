@@ -1,0 +1,51 @@
+{{ define "main" }}
+<article class="page-magazine-article cj-article" itemscope itemtype="https://schema.org/Article">
+
+  <nav aria-label="Breadcrumb">
+    <ol role="list">
+      <li><a href="/">Home</a></li>
+      <li><a href="/creative-journal/">Creative Journal</a></li>
+      <li aria-current="page">{{ .Title }}</li>
+    </ol>
+  </nav>
+
+  <header>
+    {{ with .Params.category }}<p class="story-category" itemprop="articleSection">{{ . }}</p>{{ end }}
+    <h1 itemprop="headline">{{ .Title }}</h1>
+    {{ with .Params.description }}<p class="article-desc">{{ . }}</p>{{ end }}
+    <p class="article-meta">
+      By <span itemprop="author">{{ .Params.author | default "Lauren Huffman" }}</span>
+      {{ with .Date }}
+      &mdash;
+      <time datetime="{{ .Format "2006-01-02" }}" itemprop="datePublished">{{ .Format "January 2, 2006" }}</time>
+      {{ end }}
+      {{ with .Params.readingTime }}&mdash; {{ . }} read{{ end }}
+    </p>
+  </header>
+
+  {{ with .Params.image }}
+  <figure class="cj-article__hero">
+    <img
+      src="{{ . }}"
+      alt="{{ $.Params.imageAlt | default $.Title }}"
+      width="800"
+      height="1000"
+      loading="eager"
+      decoding="async"
+      itemprop="image"
+    />
+  </figure>
+  {{ end }}
+
+  <div class="article-body" itemprop="articleBody">
+    {{ .Content }}
+  </div>
+
+  <aside class="article-cta" aria-label="Explore more">
+    <h2>Explore the Creative Journal</h2>
+    <p>More essays on photography, creative direction, business, and community.</p>
+    <a href="/creative-journal/" class="cta-button" data-track="creative_journal_explore">Back to the Journal</a>
+  </aside>
+
+</article>
+{{ end }}

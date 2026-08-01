@@ -1,0 +1,66 @@
+# Creative Journal — repeatable editorial content
+# Update topics, case studies, and pillars here without editing layouts.
+
+expertise:
+  - title: Creative Direction
+    slug: creative-direction
+    description: Concept development, color, mood boards, visual language, styling, location selection, and building campaigns that feel cohesive from beginning to end.
+  - title: Photography
+    slug: photography
+    description: Lighting, posing, composition, directing non-models, equipment choices, editing, and creating imagery that feels both intentional and natural.
+  - title: Creative Business
+    slug: creative-business
+    description: Pricing, client experience, brand positioning, sustainable growth, content strategy, and building a photography business around relationships rather than constant competition.
+  - title: Community
+    slug: community
+    description: Creative collaboration, local partnerships, educational events, creator spotlights, and building a stronger photography and content community throughout South Florida.
+
+caseStudies:
+  - title: The Coffee Campaign
+    description: How warm tones, natural movement, and environmental details were used to create a lifestyle image library for a South Florida coffee brand.
+    image: /images/offer-commercial.jpg
+    imageAlt: Warm-toned commercial lifestyle photography for a South Florida coffee brand
+  - title: The Monochrome Editorial
+    description: How one dominant color can unify wardrobe, background, styling, and post-production into a recognizable campaign.
+    image: /images/portfolio/preview-3.jpg
+    imageAlt: Monochrome editorial photography with a unified color palette
+  - title: Personal Brand Story
+    description: How location, wardrobe, posing, and content planning helped translate a founder’s personality into a cohesive personal-brand library.
+    image: /images/offer-branding.jpg
+    imageAlt: Personal branding photography session in South Florida
+
+communityPillars:
+  - title: Connect
+    description: Meet photographers, models, creators, artists, and businesses throughout South Florida.
+  - title: Create
+    description: Participate in styled shoots, portfolio-building sessions, creative experiments, and local collaborations.
+  - title: Learn
+    description: Join educational calls, portfolio discussions, behind-the-scenes breakdowns, and hands-on creative sessions.
+
+coffeeCallTopics:
+  - Portfolio reviews
+  - Creative-direction breakdowns
+  - Lighting and posing discussions
+  - Personal-brand photography
+  - Pricing and client experience
+  - Editing and visual consistency
+  - Building relationships in the creative industry
+  - Open creative Q&A
+
+speakingTopics:
+  - Building a recognizable visual brand
+  - Creative direction before the camera comes out
+  - Helping everyday people feel confident on camera
+  - Photography as a business tool
+  - Building a creative career through relationships
+  - Community over competition
+  - Creating collaborative opportunities in South Florida
+  - The role of color and consistency in brand photography
+  - Growing from photographer to creative director
+
+newsletterInterests:
+  - Photography and creative direction
+  - Community calls and educational events
+  - Casting and collaboration opportunities
+  - Commercial photography and brand resources
+  - South Florida creator features

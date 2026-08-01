@@ -4,7 +4,9 @@
 
 {{/* ── Title ── */}}
 {{ $title := "" }}
-{{ if .IsHome }}
+{{ if .Params.seoTitle }}
+  {{ $title = .Params.seoTitle }}
+{{ else if .IsHome }}
   {{ $title = site.Title }}
 {{ else }}
   {{ $title = printf "%s | %s" .Title site.Title }}

@@ -1,0 +1,59 @@
+{{ $action := site.Params.creativeJournal.forms.communityWaitlistAction }}
+<form
+  class="cj-form"
+  action="{{ $action }}"
+  method="post"
+  novalidate
+  data-track-submit="community_call_waitlist_submit"
+  data-form-name="community-call-waitlist"
+>
+  <input type="hidden" name="interest" value="interest-community-calls" />
+
+  <div class="cj-form__grid">
+    <div class="cj-form__field">
+      <label for="waitlist-first-name">First name</label>
+      <input id="waitlist-first-name" name="first_name" type="text" autocomplete="given-name" required />
+      <p class="cj-form__error" role="alert" hidden>Please enter your first name.</p>
+    </div>
+    <div class="cj-form__field">
+      <label for="waitlist-last-name">Last name</label>
+      <input id="waitlist-last-name" name="last_name" type="text" autocomplete="family-name" required />
+      <p class="cj-form__error" role="alert" hidden>Please enter your last name.</p>
+    </div>
+  </div>
+
+  <div class="cj-form__field">
+    <label for="waitlist-email">Email</label>
+    <input id="waitlist-email" name="email" type="email" autocomplete="email" inputmode="email" required />
+    <p class="cj-form__error" role="alert" hidden>Please enter a valid email address.</p>
+  </div>
+
+  <div class="cj-form__field">
+    <label for="waitlist-instagram">Instagram handle</label>
+    <input id="waitlist-instagram" name="instagram" type="text" autocomplete="username" placeholder="@yourhandle" />
+  </div>
+
+  <div class="cj-form__field">
+    <label for="waitlist-role">Primary creative role</label>
+    <input id="waitlist-role" name="creative_role" type="text" required placeholder="Photographer, model, stylist, etc." />
+    <p class="cj-form__error" role="alert" hidden>Please enter your primary creative role.</p>
+  </div>
+
+  <div class="cj-form__field">
+    <label for="waitlist-city">City</label>
+    <input id="waitlist-city" name="city" type="text" autocomplete="address-level2" required />
+    <p class="cj-form__error" role="alert" hidden>Please enter your city.</p>
+  </div>
+
+  <div class="cj-form__field cj-form__field--checkbox">
+    <input id="waitlist-consent" name="consent" type="checkbox" value="yes" required />
+    <label for="waitlist-consent">I agree to receive updates about Creative Coffee Calls and related community news.</label>
+    <p class="cj-form__error" role="alert" hidden>Please confirm consent to join the waitlist.</p>
+  </div>
+
+  <button type="submit" class="btn btn--filled">Join the Call Waitlist</button>
+  <p class="cj-form__status" role="status" aria-live="polite"></p>
+  {{ if not $action }}
+  <p class="cj-form__note"><small>Form endpoint pending CRM configuration. Submissions are validated locally until <code>params.creativeJournal.forms.communityWaitlistAction</code> is set in <code>hugo.yaml</code>.</small></p>
+  {{ end }}
+</form>

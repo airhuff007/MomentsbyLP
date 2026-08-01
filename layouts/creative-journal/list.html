@@ -1,0 +1,294 @@
+{{ define "main" }}
+{{ $cj := index site.Data "creative-journal" }}
+{{ $cfg := site.Params.creativeJournal }}
+{{ $articles := .Pages.ByDate.Reverse }}
+{{ $featuredPage := index (where $articles "Params.featured" true) 0 }}
+{{ $supporting := where $articles "Params.featured" "ne" true }}
+
+<div class="about-page cj-page">
+
+  {{ partial "editorial-cameras.html" . }}
+
+  {{/* ══ HERO ══ */}}
+  <section class="cj-hero about-hero about-page__section" aria-labelledby="cj-heading">
+    <div class="about-hero__bg" aria-hidden="true">
+      <img
+        src="/images/lauren-camera.jpg"
+        alt=""
+        width="1170"
+        height="1454"
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+    <div class="about-hero__overlay" aria-hidden="true"></div>
+    <div class="container about-hero__inner">
+      <p class="eyebrow about-reveal" data-delay="0">The Creative Journal</p>
+      <h1 id="cj-heading" class="about-reveal" data-delay="100">Photography is only part of the work.</h1>
+      <p class="pkg-hero__lead about-reveal" data-delay="200">The real work begins before the camera comes out.</p>
+      <p class="pkg-hero__subtitle about-reveal" data-delay="300">
+        This is where Lauren shares the ideas, creative decisions, lessons, and conversations behind her photography&mdash;covering
+        creative direction, visual branding, business, collaboration, and the evolving South Florida creative community.
+      </p>
+      <div class="pkg-hero__ctas about-reveal" data-delay="400">
+        <a href="#featured-ideas" class="btn btn--filled" data-track="creative_journal_explore">Explore the Journal</a>
+        <a href="#community" class="btn" data-track="creative_community_click">Join the Creative Community</a>
+      </div>
+    </div>
+  </section>
+
+
+  {{/* ══ FEATURED IDEAS ══ */}}
+  <section id="featured-ideas" class="pkg-section cj-section about-page__section" aria-labelledby="cj-ideas-heading">
+    <div class="container">
+      <div class="pkg-section__header">
+        <p class="eyebrow about-reveal">Featured Ideas</p>
+        <h2 id="cj-ideas-heading" class="about-reveal" data-delay="80">Ideas Worth Exploring</h2>
+        <p class="about-reveal" data-delay="120">
+          Thoughts on photography, creative direction, visual identity, business, and building meaningful creative relationships.
+        </p>
+      </div>
+
+      {{ with $featuredPage }}
+      <article class="cj-featured about-reveal" data-delay="0">
+        <div class="cj-featured__media">
+          {{ with .Params.image }}
+          <img
+            src="{{ . }}"
+            alt="{{ $featuredPage.Params.imageAlt | default $featuredPage.Title }}"
+            width="800"
+            height="1000"
+            loading="lazy"
+            decoding="async"
+          />
+          {{ end }}
+        </div>
+        <div class="cj-featured__body">
+          {{ with .Params.category }}<p class="story-category">{{ . }}</p>{{ end }}
+          <h3>{{ .Title }}</h3>
+          {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+          {{ with .Params.readingTime }}<p class="cj-meta">{{ . }} read</p>{{ end }}
+          {{ if .Params.comingSoon }}
+          <p class="cj-coming-soon">Coming Soon</p>
+          {{ else }}
+          <a href="{{ .Permalink }}" class="text-link" data-track="creative_journal_article_click">Read the essay&nbsp;&rarr;</a>
+          {{ end }}
+        </div>
+      </article>
+      {{ end }}
+
+      {{ if $supporting }}
+      <div class="cj-articles about-stagger">
+        {{ range $supporting }}
+        {{ $article := . }}
+        <article class="cj-article-card about-reveal">
+          {{ with $article.Params.image }}
+          <a {{ if not $article.Params.comingSoon }}href="{{ $article.Permalink }}"{{ end }} class="cj-article-card__media" tabindex="{{ if $article.Params.comingSoon }}-1{{ else }}0{{ end }}" data-track="creative_journal_article_click">
+            <img
+              src="{{ . }}"
+              alt="{{ $article.Params.imageAlt | default $article.Title }}"
+              width="600"
+              height="750"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+          {{ end }}
+          <div class="cj-article-card__body">
+            {{ with $article.Params.category }}<p class="story-category">{{ . }}</p>{{ end }}
+            <h3>
+              {{ if $article.Params.comingSoon }}
+              {{ $article.Title }}
+              {{ else }}
+              <a href="{{ $article.Permalink }}" data-track="creative_journal_article_click">{{ $article.Title }}</a>
+              {{ end }}
+            </h3>
+            {{ with $article.Params.description }}<p>{{ . }}</p>{{ end }}
+            {{ if $article.Params.comingSoon }}
+            <p class="cj-coming-soon">Coming Soon</p>
+            {{ else }}
+            <a href="{{ $article.Permalink }}" class="text-link" data-track="creative_journal_article_click">Read&nbsp;&rarr;</a>
+            {{ end }}
+          </div>
+        </article>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </section>
+
+
+  {{/* ══ AREAS OF EXPERTISE ══ */}}
+  <section class="pkg-section pkg-section--alt cj-section about-page__section" aria-labelledby="cj-expertise-heading">
+    <div class="container">
+      <div class="pkg-section__header">
+        <p class="eyebrow about-reveal">Areas of Expertise</p>
+        <h2 id="cj-expertise-heading" class="about-reveal" data-delay="80">What Lauren Explores</h2>
+      </div>
+      <div class="cj-expertise about-stagger">
+        {{ range $cj.expertise }}
+        <article class="cj-expertise-card about-reveal">
+          <h3><a href="/creative-journal/#featured-ideas">{{ .title }}</a></h3>
+          <p>{{ .description }}</p>
+        </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+
+  {{/* ══ BEHIND THE WORK ══ */}}
+  <section class="pkg-section cj-section about-page__section" aria-labelledby="cj-behind-heading">
+    <div class="container">
+      <div class="pkg-section__header">
+        <p class="eyebrow about-reveal">Case Studies</p>
+        <h2 id="cj-behind-heading" class="about-reveal" data-delay="80">Behind the Work</h2>
+        <p class="about-reveal" data-delay="120">
+          Finished images show the result. These stories explore the decisions, preparation, lighting, direction,
+          and collaboration that brought each campaign to life.
+        </p>
+      </div>
+      <div class="cj-case-studies about-stagger">
+        {{ range $cj.caseStudies }}
+        <article class="cj-case-study about-reveal">
+          <div class="cj-case-study__media">
+            <img
+              src="{{ .image }}"
+              alt="{{ .imageAlt }}"
+              width="700"
+              height="875"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="cj-case-study__body">
+            <h3>{{ .title }}</h3>
+            <p>{{ .description }}</p>
+          </div>
+        </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+
+  {{/* ══ COMMUNITY OVER COMPETITION ══ */}}
+  <section id="community" class="pkg-section pkg-section--alt cj-section about-page__section" aria-labelledby="cj-community-heading">
+    <div class="container">
+      <div class="pkg-section__header">
+        <p class="eyebrow about-reveal">Community</p>
+        <h2 id="cj-community-heading" class="about-reveal" data-delay="80">Community Over Competition</h2>
+        <p class="about-reveal" data-delay="120">
+          Lauren is building a South Florida community for photographers, models, content creators, stylists, and local brands
+          who believe better work is created through collaboration, shared knowledge, and meaningful relationships.
+        </p>
+      </div>
+      <div class="cj-pillars about-stagger">
+        {{ range $cj.communityPillars }}
+        <article class="cj-pillar about-reveal">
+          <h3>{{ .title }}</h3>
+          <p>{{ .description }}</p>
+        </article>
+        {{ end }}
+      </div>
+      <div class="cj-section__ctas about-reveal" data-delay="160">
+        <a href="{{ $cfg.communityURL | default "/creator-community/" }}" class="btn btn--filled" data-track="creative_community_click">Join the Community</a>
+        <a href="{{ $cfg.eventsURL | default "/magazine/events/" }}" class="btn" data-track="event_page_click">View Upcoming Events</a>
+      </div>
+    </div>
+  </section>
+
+
+  {{/* ══ COMMUNITY CALLS ══ */}}
+  <section id="community-calls" class="pkg-section cj-section about-page__section" aria-labelledby="cj-calls-heading">
+    <div class="container cj-calls">
+      <div class="cj-calls__intro">
+        <p class="eyebrow about-reveal">Coming Soon</p>
+        <h2 id="cj-calls-heading" class="about-reveal" data-delay="80">Creative Coffee Calls</h2>
+        <p class="about-reveal" data-delay="120">
+          A recurring online conversation for photographers, models, creators, and creative business owners.
+        </p>
+        <p class="about-reveal" data-delay="160">
+          Each call will explore a practical topic&mdash;from portfolio feedback and lighting to personal branding,
+          creative business, collaboration, and the thinking behind successful shoots.
+        </p>
+      </div>
+      <div class="cj-topics about-reveal" data-delay="200">
+        <h3 class="cj-topics__label">Example Topics</h3>
+        <ul role="list" class="cj-topics__list">
+          {{ range $cj.coffeeCallTopics }}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="cj-form-panel about-reveal" data-delay="240">
+        <h3>Join the Call Waitlist</h3>
+        {{ partial "creative-journal-waitlist-form.html" . }}
+      </div>
+    </div>
+  </section>
+
+
+  {{/* ══ SPEAKING AND PODCASTS ══ */}}
+  <section id="speaking" class="pkg-section pkg-section--alt cj-section about-page__section" aria-labelledby="cj-speaking-heading">
+    <div class="container">
+      <div class="pkg-section__header">
+        <p class="eyebrow about-reveal">Speaking</p>
+        <h2 id="cj-speaking-heading" class="about-reveal" data-delay="80">Speaking and Conversations</h2>
+        <p class="about-reveal" data-delay="120">
+          Lauren is available for podcasts, creative panels, local business events, educational conversations, and community
+          discussions focused on photography, visual storytelling, creative entrepreneurship, and collaboration.
+        </p>
+      </div>
+      <ul role="list" class="cj-speaking-topics about-reveal" data-delay="160">
+        {{ range $cj.speakingTopics }}
+        <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+      <div class="cj-section__ctas about-reveal" data-delay="200">
+        <a href="#speaking-inquiry" class="btn btn--filled">Invite Lauren to Speak</a>
+        <a href="#speaking-inquiry" class="btn">Request Podcast Information</a>
+      </div>
+      <div id="speaking-inquiry" class="cj-form-panel cj-form-panel--wide about-reveal" data-delay="240">
+        <h3>Speaking &amp; Podcast Inquiry</h3>
+        {{ partial "creative-journal-speaking-form.html" . }}
+      </div>
+    </div>
+  </section>
+
+
+  {{/* ══ NEWSLETTER ══ */}}
+  <section id="newsletter" class="cj-newsletter about-page__section" aria-labelledby="cj-newsletter-heading">
+    <div class="container">
+      <div class="cj-newsletter__inner">
+        <p class="eyebrow about-reveal">Newsletter</p>
+        <h2 id="cj-newsletter-heading" class="about-reveal" data-delay="80">Join the Creative Conversation</h2>
+        <p class="about-reveal" data-delay="120">
+          Receive new journal entries, behind-the-scenes campaign stories, upcoming community calls, local creative events,
+          and collaboration opportunities.
+        </p>
+        <div class="about-reveal" data-delay="160">
+          {{ partial "creative-journal-newsletter-form.html" . }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {{/* ══ FINAL CTA ══ */}}
+  <section class="event-cta-bottom cj-final-cta" aria-label="Start creating">
+    <div class="container">
+      <h2>Have an idea worth creating?</h2>
+      <div class="event-cta-bottom__buttons">
+        <a href="{{ $cfg.projectURL | default "/book-a-brand-call/" }}" class="btn btn--filled" data-track="project_inquiry_click">Start a Project</a>
+        <a href="{{ $cfg.communityURL | default "/creator-community/" }}" class="btn" data-track="creative_community_click">Join the Community</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+{{ partial "editorial-animations.html" . }}
+{{ partial "creative-journal-scripts.html" . }}
+
+{{ end }}

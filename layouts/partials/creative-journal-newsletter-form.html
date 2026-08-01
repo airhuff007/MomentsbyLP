@@ -1,0 +1,47 @@
+{{ $cj := index site.Data "creative-journal" }}
+{{ $action := site.Params.creativeJournal.forms.newsletterAction }}
+{{ if and site.Params.mailerlite.accountId site.Params.mailerlite.formId }}
+  <div class="ml-embedded" data-form="{{ site.Params.mailerlite.formId }}"></div>
+  <p class="cj-form__note"><small>Interest selections below will be available once a dedicated MailerLite group or custom form is configured.</small></p>
+{{ else }}
+<form
+  class="cj-form cj-form--newsletter"
+  action="{{ $action }}"
+  method="post"
+  novalidate
+  data-track-submit="creative_newsletter_submit"
+  data-form-name="creative-newsletter"
+>
+  <div class="cj-form__grid">
+    <div class="cj-form__field">
+      <label for="newsletter-first-name">First name</label>
+      <input id="newsletter-first-name" name="first_name" type="text" autocomplete="given-name" required />
+      <p class="cj-form__error" role="alert" hidden>Please enter your first name.</p>
+    </div>
+    <div class="cj-form__field">
+      <label for="newsletter-email">Email</label>
+      <input id="newsletter-email" name="email" type="email" autocomplete="email" inputmode="email" required />
+      <p class="cj-form__error" role="alert" hidden>Please enter a valid email address.</p>
+    </div>
+  </div>
+
+  <fieldset class="cj-form__fieldset">
+    <legend>Optional interests</legend>
+    <ul role="list" class="cj-form__checks">
+      {{ range $cj.newsletterInterests }}
+      <li>
+        <input id="interest-{{ . | urlize }}" name="interests" type="checkbox" value="{{ . }}" />
+        <label for="interest-{{ . | urlize }}">{{ . }}</label>
+      </li>
+      {{ end }}
+    </ul>
+  </fieldset>
+
+  <button type="submit" class="btn btn--filled">Join the Creative Conversation</button>
+  <p class="cj-form__status" role="status" aria-live="polite"></p>
+  <p class="cj-form__note"><small>No spam. Unsubscribe anytime.</small></p>
+  {{ if not $action }}
+  <p class="cj-form__note"><small>Newsletter endpoint pending CRM configuration. Set <code>params.creativeJournal.forms.newsletterAction</code> or MailerLite IDs in <code>hugo.yaml</code>.</small></p>
+  {{ end }}
+</form>
+{{ end }}

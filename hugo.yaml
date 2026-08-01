@@ -25,6 +25,17 @@ params:
     accountId: ""   # MailerLite → Account → API → Account ID
     formId: ""      # MailerLite → Forms → your embedded form → ID in the embed code
 
+  # ── Creative Journal ───────────────────────────────────────────────────────
+  creativeJournal:
+    communityURL: "/creator-community/"
+    eventsURL: "/magazine/events/"
+    projectURL: "/book-a-brand-call/"
+    # TODO: Set CRM/form endpoints when MailerLite or AgentBoost forms are ready
+    forms:
+      communityWaitlistAction: ""
+      speakingInquiryAction: ""
+      newsletterAction: ""
+
   # ── Shopify Integration ──────────────────────────────────────────────────
   # Public values only. Never put Admin API keys or private tokens here.
   # See docs/shopify-integration.md for setup instructions.

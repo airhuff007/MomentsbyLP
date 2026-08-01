@@ -1,0 +1,96 @@
+{{ $action := site.Params.creativeJournal.forms.speakingInquiryAction }}
+<form
+  class="cj-form"
+  action="{{ $action }}"
+  method="post"
+  novalidate
+  data-track-submit="speaking_inquiry_submit"
+  data-form-name="speaking-inquiry"
+>
+  <div class="cj-form__grid">
+    <div class="cj-form__field">
+      <label for="speaking-name">Name</label>
+      <input id="speaking-name" name="name" type="text" autocomplete="name" required />
+      <p class="cj-form__error" role="alert" hidden>Please enter your name.</p>
+    </div>
+    <div class="cj-form__field">
+      <label for="speaking-organization">Organization or podcast</label>
+      <input id="speaking-organization" name="organization" type="text" required />
+      <p class="cj-form__error" role="alert" hidden>Please enter an organization or podcast name.</p>
+    </div>
+  </div>
+
+  <div class="cj-form__grid">
+    <div class="cj-form__field">
+      <label for="speaking-email">Email</label>
+      <input id="speaking-email" name="email" type="email" autocomplete="email" inputmode="email" required />
+      <p class="cj-form__error" role="alert" hidden>Please enter a valid email address.</p>
+    </div>
+    <div class="cj-form__field">
+      <label for="speaking-website">Website</label>
+      <input id="speaking-website" name="website" type="url" autocomplete="url" placeholder="https://" />
+    </div>
+  </div>
+
+  <div class="cj-form__grid">
+    <div class="cj-form__field">
+      <label for="speaking-event">Event or show name</label>
+      <input id="speaking-event" name="event_name" type="text" required />
+      <p class="cj-form__error" role="alert" hidden>Please enter the event or show name.</p>
+    </div>
+    <div class="cj-form__field">
+      <label for="speaking-topic">Proposed topic</label>
+      <input id="speaking-topic" name="proposed_topic" type="text" required />
+      <p class="cj-form__error" role="alert" hidden>Please enter a proposed topic.</p>
+    </div>
+  </div>
+
+  <div class="cj-form__grid">
+    <div class="cj-form__field">
+      <label for="speaking-format">Format</label>
+      <select id="speaking-format" name="format" required>
+        <option value="">Select a format</option>
+        <option value="podcast">Podcast interview</option>
+        <option value="panel">Panel or fireside chat</option>
+        <option value="keynote">Keynote or presentation</option>
+        <option value="workshop">Workshop or educational session</option>
+        <option value="community">Community conversation</option>
+        <option value="other">Other</option>
+      </select>
+      <p class="cj-form__error" role="alert" hidden>Please select a format.</p>
+    </div>
+    <div class="cj-form__field">
+      <label for="speaking-date">Intended date</label>
+      <input id="speaking-date" name="intended_date" type="text" placeholder="Month / season / TBD" required />
+      <p class="cj-form__error" role="alert" hidden>Please enter an intended date or timeframe.</p>
+    </div>
+  </div>
+
+  <div class="cj-form__field">
+    <label for="speaking-location">In-person or virtual</label>
+    <select id="speaking-location" name="location_type" required>
+      <option value="">Select one</option>
+      <option value="in-person">In-person</option>
+      <option value="virtual">Virtual</option>
+      <option value="either">Either works</option>
+    </select>
+    <p class="cj-form__error" role="alert" hidden>Please select in-person or virtual.</p>
+  </div>
+
+  <div class="cj-form__field">
+    <label for="speaking-audience">Audience description</label>
+    <textarea id="speaking-audience" name="audience" rows="3" required placeholder="Who will be listening or attending?"></textarea>
+    <p class="cj-form__error" role="alert" hidden>Please describe the audience.</p>
+  </div>
+
+  <div class="cj-form__field">
+    <label for="speaking-details">Additional details</label>
+    <textarea id="speaking-details" name="details" rows="4" placeholder="Anything else Lauren should know before responding."></textarea>
+  </div>
+
+  <button type="submit" class="btn btn--filled">Send Inquiry</button>
+  <p class="cj-form__status" role="status" aria-live="polite"></p>
+  {{ if not $action }}
+  <p class="cj-form__note"><small>Form endpoint pending CRM configuration. Submissions are validated locally until <code>params.creativeJournal.forms.speakingInquiryAction</code> is set in <code>hugo.yaml</code>.</small></p>
+  {{ end }}
+</form>
