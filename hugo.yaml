@@ -14,6 +14,9 @@ params:
   state: "FL"
   region: "South Florida"
   ogImage: "/images/lauren-garden.jpg"
+  ogImageWidth: 1170
+  ogImageHeight: 1454
+  ogImageVersion: "2"
   social:
     instagram: "https://www.instagram.com/momentsbylp"
     facebook: ""
