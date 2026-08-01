@@ -1,154 +1,185 @@
 {{ define "main" }}
 
-{{/* ══ HERO ══ */}}
-<section class="pkg-hero" aria-labelledby="wwu-heading">
-  <div class="container">
-    <p class="eyebrow">Boca Raton &mdash; South Florida</p>
-    <h1 id="wwu-heading">Work With Lauren</h1>
-    <p class="pkg-hero__subtitle">
-      Lauren partners with lifestyle brands, growing professionals, and families to create
-      photography that works — on websites, in ads, and across every channel your audience sees.
-    </p>
-  </div>
-</section>
+<div class="about-page wwu-page">
 
+  {{ partial "editorial-cameras.html" . }}
 
-{{/* ══ THREE PATHS ══ */}}
-<section class="wwu-paths" aria-labelledby="paths-heading">
-  <div class="container">
-    <p class="eyebrow" style="text-align:center;">Where do you fit?</p>
-    <h2 id="paths-heading" class="section-title" style="text-align:center;">Find Your Starting Point</h2>
-
-    <div class="wwu-paths__grid">
-
-      <article class="wwu-path-card wwu-path-card--primary">
-        <p class="wwu-path-card__label">Primary Focus</p>
-        <h3>I&rsquo;m a Brand</h3>
-        <p>
-          Skincare. Jewelry. Coffee. Fashion. Wellness. Hospitality.
-          You need professional imagery that builds trust, sells product,
-          and keeps your channels stocked with fresh content.
-        </p>
-        <ul role="list" class="wwu-path-card__offers">
-          <li>Brand Launch Campaigns &mdash; from $2,500</li>
-          <li>Monthly Content Partnerships &mdash; from $900/mo</li>
-          <li>Product Photography &mdash; from $500</li>
-        </ul>
-        <a href="/commercial/" class="btn btn--filled">Explore Commercial Work &rarr;</a>
-      </article>
-
-      <article class="wwu-path-card">
-        <h3>I&rsquo;m Building My Personal Brand</h3>
-        <p>
-          Realtors, coaches, founders, influencers, and professionals who
-          are ready to show up with intention. More than headshots &mdash;
-          a complete story of who you are.
-        </p>
-        <ul role="list" class="wwu-path-card__offers">
-          <li>Personal Brand Sessions &mdash; from $700</li>
-        </ul>
-        <a href="/headshots-boca-raton/" class="btn">Personal Brand Sessions &rarr;</a>
-      </article>
-
-      <article class="wwu-path-card">
-        <h3>I&rsquo;m Looking for Portrait Photography</h3>
-        <p>
-          Families, couples, maternity, and lifestyle sessions across
-          Boca Raton and South Florida. Timeless images, golden hour, real moments.
-        </p>
-        <ul role="list" class="wwu-path-card__offers">
-          <li>Family Sessions &mdash; from $350</li>
-          <li>Couples &amp; Maternity available</li>
-        </ul>
-        <a href="/family-photographer-boca-raton/" class="btn">Portrait Sessions &rarr;</a>
-      </article>
-
+  {{/* ══ HERO ══ */}}
+  <section class="pkg-hero about-hero about-page__section" aria-labelledby="wwu-heading">
+    <div class="container about-hero__inner">
+      <p class="eyebrow about-reveal" data-delay="0">Boca Raton &mdash; South Florida</p>
+      <h1 id="wwu-heading" class="about-reveal" data-delay="100">Work With Lauren</h1>
+      <p class="pkg-hero__lead about-reveal" data-delay="200">
+        Intentional imagery for brands with something to say.
+      </p>
+      <p class="pkg-hero__subtitle about-reveal" data-delay="300">
+        Working with Lauren is a personalized branding experience. She takes the time to understand your vision,
+        your business, and your goals before creating a custom session that reflects your brand with confidence,
+        authenticity, and intention.
+      </p>
     </div>
-  </div>
-</section>
+  </section>
 
 
-{{/* ══ INVESTMENT OVERVIEW ══ */}}
-<section class="wwu-investment" aria-labelledby="investment-heading">
-  <div class="container">
-    <p class="eyebrow" style="text-align:center;">Investment</p>
-    <h2 id="investment-heading" class="section-title" style="text-align:center;">What to Expect</h2>
-    <p class="wwu-investment__note">
-      Commercial campaigns are scoped to your brand&rsquo;s goals, production needs, and usage rights.
-      The ranges below represent typical starting points — not the ceiling.
-    </p>
+  {{/* ══ THREE PATHS ══ */}}
+  <section class="wwu-paths about-page__section" aria-labelledby="paths-heading">
+    <div class="container">
+      <p class="eyebrow about-reveal" style="text-align:center;">Where do you fit?</p>
+      <h2 id="paths-heading" class="section-title about-reveal" data-delay="80" style="text-align:center;">Find Your Starting Point</h2>
 
-    <div class="wwu-investment__grid">
-      <div class="wwu-investment__item">
-        <p class="wwu-investment__category">Brand Launch Campaign</p>
-        <p class="wwu-investment__range">$2,500&ndash;$5,000+</p>
-        <p class="wwu-investment__desc">One-time. For launches, campaigns, and website refreshes.</p>
-      </div>
-      <div class="wwu-investment__item wwu-investment__item--featured">
-        <p class="wwu-investment__category">Monthly Content Partnership</p>
-        <p class="wwu-investment__range">from $900<span>/mo</span></p>
-        <p class="wwu-investment__desc">3&ndash;6 month commitment. One production day. Fresh content monthly.</p>
-      </div>
-      <div class="wwu-investment__item">
-        <p class="wwu-investment__category">Campaign Production</p>
-        <p class="wwu-investment__range">Custom</p>
-        <p class="wwu-investment__desc">Models, multiple locations, full-day production. Proposal-based.</p>
-      </div>
-      <div class="wwu-investment__item">
-        <p class="wwu-investment__category">Personal Brand Session</p>
-        <p class="wwu-investment__range">from $700</p>
-        <p class="wwu-investment__desc">Solopreneurs, coaches, realtors, founders.</p>
+      <div class="wwu-paths__grid about-stagger">
+
+        <article class="wwu-path-card wwu-path-card--primary about-reveal" data-delay="0">
+          <p class="wwu-path-card__label">Primary Focus</p>
+          <h3>Commercial Work</h3>
+          <p>
+            Your brand deserves imagery that feels as intentional as the business behind it. Lauren handles
+            the full shoot, creative direction, models, props, and production, so you can focus on showing
+            up with confidence, whether you&rsquo;re launching something new, refreshing your product line,
+            or building content month after month.
+          </p>
+          <ul role="list" class="wwu-path-card__offers">
+            <li>Commercial work starting at $900</li>
+            <li>Paid usage rights</li>
+            <li>BTS video footage included</li>
+          </ul>
+          <a href="/commercial/" class="btn btn--filled">Commercial Work&nbsp;&rarr;</a>
+        </article>
+
+        <article class="wwu-path-card about-reveal" data-delay="120">
+          <h3>Personal Branding</h3>
+          <p>
+            The right image makes people stop scrolling and pay attention. Lauren creates a visual story
+            around who you are and what you stand for, so your audience feels connected to you before
+            they ever read a word. Perfect for realtors, entrepreneurs, and small business owners.
+          </p>
+          <ul role="list" class="wwu-path-card__offers">
+            <li>Personal branding sessions starting at $700</li>
+            <li>One edited video included</li>
+            <li>BTS video footage included</li>
+            <li>Organic usage rights &mdash; paid ads not included</li>
+          </ul>
+          <a href="/branding-photographer-boca-raton/" class="btn">Branding Session&nbsp;&rarr;</a>
+        </article>
+
+        <article class="wwu-path-card about-reveal" data-delay="240">
+          <h3>Monthly Retainers</h3>
+          <p>
+            You&rsquo;re not hiring a social media manager. You&rsquo;re hiring a creative production partner.
+            Every month: one production day, fresh imagery and reels, organized, and delivered seamlessly
+            and beautifully. You own the content. You or your team controls the management.
+          </p>
+          <ul role="list" class="wwu-path-card__offers">
+            <li>Monthly Content Partnership &mdash; from $900/mo</li>
+            <li>Professional photos &amp; video content</li>
+            <li>One production day per month</li>
+            <li>Fresh content delivered monthly</li>
+            <li>Organic usage rights &mdash; paid ads not included</li>
+          </ul>
+          <a href="/commercial/content-partnership/" class="btn">Monthly Retainers&nbsp;&rarr;</a>
+        </article>
+
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-{{/* ══ PROCESS TEASER ══ */}}
-<section class="wwu-process" aria-label="Production process">
-  <div class="container">
-    <p class="eyebrow" style="text-align:center;">The Process</p>
-    <h2 class="section-title" style="text-align:center;">How It Works</h2>
-    <ol role="list" class="process-steps process-steps--horizontal">
-      <li class="process-step">
-        <span class="process-step__num">01</span>
-        <h3>Discovery</h3>
-        <p>We learn your brand, goals, and content needs.</p>
-      </li>
-      <li class="process-step">
-        <span class="process-step__num">02</span>
-        <h3>Creative Direction</h3>
-        <p>Mood board, shot list, location planning.</p>
-      </li>
-      <li class="process-step">
-        <span class="process-step__num">03</span>
-        <h3>Production</h3>
-        <p>On-location shoot day. Efficient. Intentional.</p>
-      </li>
-      <li class="process-step">
-        <span class="process-step__num">04</span>
-        <h3>Delivery</h3>
-        <p>Edited images and Reels in an organized content library.</p>
-      </li>
-    </ol>
-    <div style="text-align:center; margin-top: 3rem;">
-      <a href="/commercial/process/" class="text-link">See the Full Process &rarr;</a>
+  {{/* ══ ADD ONS ══ */}}
+  <section class="wwu-investment about-page__section" aria-labelledby="investment-heading">
+    <div class="container">
+      <p class="eyebrow about-reveal" style="text-align:center;">Optional</p>
+      <h2 id="investment-heading" class="section-title about-reveal" data-delay="80" style="text-align:center;">Add Ons</h2>
+      <p class="wwu-investment__note about-reveal" data-delay="160">
+        Optional add-ons for any session or package. Mix and match what your brand needs.
+      </p>
+
+      <div class="wwu-investment__grid about-stagger">
+        <div class="wwu-investment__item about-reveal" data-delay="0">
+          <p class="wwu-investment__category">Paid Usage Rights Add On</p>
+          <p class="wwu-investment__range">$500<span> / 6 months</span></p>
+          <p class="wwu-investment__desc">Extend usage for paid advertising and commercial channels.</p>
+        </div>
+        <div class="wwu-investment__item wwu-investment__item--featured about-reveal" data-delay="100">
+          <p class="wwu-investment__category">Content Add On</p>
+          <p class="wwu-investment__range">$150<span> / per edited video</span></p>
+          <p class="wwu-investment__desc">Additional content for social and web.</p>
+        </div>
+        <div class="wwu-investment__item about-reveal" data-delay="200">
+          <p class="wwu-investment__category">Drone Add On</p>
+          <p class="wwu-investment__range">$200<span> / hour</span></p>
+          <p class="wwu-investment__desc">Aerial footage for campaigns and content.</p>
+        </div>
+        <div class="wwu-investment__item about-reveal" data-delay="300">
+          <p class="wwu-investment__category">Model Add On</p>
+          <p class="wwu-investment__range">$150<span> / model / hour</span></p>
+          <p class="wwu-investment__desc">Professional models sourced and managed for your shoot.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-{{/* ══ CTA ══ */}}
-<section class="event-cta-bottom" aria-label="Book a call">
-  <div class="container">
-    <p class="eyebrow">For Brands &amp; Commercial Clients</p>
-    <h2>Ready to Build Your Content Library?</h2>
-    <p>For commercial campaigns, content partnerships, and brand launch projects — start with a discovery call.</p>
-    <div class="event-cta-bottom__buttons">
-      <a href="/book-a-brand-call/" class="btn btn--filled" style="font-size:0.8rem; letter-spacing:0.14em; padding:1.1rem 3rem;">Book a Creative Discovery Call</a>
-      <p class="event-cta-bottom__detail">For portrait and personal brand sessions &mdash; <a href="/book/" style="color:rgba(250,249,247,0.5); text-decoration:underline;">book here instead</a></p>
+  {{/* ══ PROCESS TEASER ══ */}}
+  <section class="wwu-process about-page__section" aria-label="Production process">
+    <div class="container">
+      <p class="eyebrow about-reveal" style="text-align:center;">The Process</p>
+      <h2 class="section-title about-reveal" data-delay="80" style="text-align:center;">How It Works</h2>
+      <ol role="list" class="process-steps process-steps--horizontal about-stagger">
+        <li class="process-step about-reveal" data-delay="0">
+          <span class="process-step__num">01</span>
+          <h3>Discovery</h3>
+          <p>
+            A discovery call where Lauren asks how you started your brand, what you&rsquo;re looking for,
+            how the content will be used, and what your budget is if you have one.
+          </p>
+        </li>
+        <li class="process-step about-reveal" data-delay="120">
+          <span class="process-step__num">02</span>
+          <h3>Creative Direction</h3>
+          <p>
+            From the very start to the finished project, Lauren helps you every step of the way with outfit
+            guidance, props, and detail-oriented direction to bring your vision to life.
+          </p>
+        </li>
+        <li class="process-step about-reveal" data-delay="240">
+          <span class="process-step__num">03</span>
+          <h3>Production</h3>
+          <p>
+            Before shoot day, Lauren sends a PDF with everything you need to know, an organized shot list,
+            and a clear run of the day so you feel confident walking in.
+          </p>
+        </li>
+        <li class="process-step about-reveal" data-delay="360">
+          <span class="process-step__num">04</span>
+          <h3>Delivery</h3>
+          <p>
+            Edited images and Reels delivered in a clean, organized online gallery. Everything is labeled,
+            easy to download, and ready to use so receiving your content feels seamless.
+          </p>
+        </li>
+      </ol>
+      <div class="about-reveal" data-delay="480" style="text-align:center; margin-top: 3rem;">
+        <a href="/commercial/process/" class="text-link">See the Full Process &rarr;</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+
+  {{/* ══ CTA ══ */}}
+  <section class="event-cta-bottom about-page__section" aria-label="Book a call">
+    <div class="container about-reveal about-reveal--scale">
+      <p class="eyebrow">For Brands &amp; Commercial Clients</p>
+      <h2>Ready to Build Your Content Library?</h2>
+      <p>For commercial campaigns, content partnerships, and brand launch projects — start with a discovery call.</p>
+      <div class="event-cta-bottom__buttons">
+        <a href="/book-a-brand-call/" class="btn btn--filled" style="font-size:0.8rem; letter-spacing:0.14em; padding:1.1rem 3rem;">Book a Creative Discovery Call</a>
+        <p class="event-cta-bottom__detail">For portrait and personal brand sessions &mdash; <a href="/book/" style="color:rgba(250,249,247,0.5); text-decoration:underline;">book here instead</a></p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+{{ partial "editorial-animations.html" . }}
 
 {{ end }}
