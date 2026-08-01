@@ -1,6 +1,7 @@
 {{ define "main" }}
 
-{{/* ══ 1. HERO VIDEO ══ */}}
+{{/* ══ 1. OPENING PANEL — video + quote (full screen on mobile) ══ */}}
+<div class="home-panel home-panel--opening">
 <section class="hero-video" aria-label="Moments by LP — Commercial Brand Photographer Boca Raton">
 
   <video class="hero-video__vid" autoplay muted loop playsinline>
@@ -8,8 +9,6 @@
   </video>
 
   <div class="hero-video__overlay" aria-hidden="true"></div>
-
-  <div class="hero-video__scroll" aria-hidden="true">Scroll</div>
 
 </section>
 
@@ -20,6 +19,9 @@
     <p>&ldquo;The best photos aren&rsquo;t taken. They&rsquo;re created through trust, ease, and making people forget there&rsquo;s a camera in the room.&rdquo;</p>
   </blockquote>
 </section>
+
+  <div class="home-panel__scroll" aria-hidden="true">Scroll</div>
+</div>
 
 
 {{/* ══ 3. ABOUT LAUREN (full about page content) ══ */}}
