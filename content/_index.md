@@ -10,5 +10,5 @@ keywords:
   - "skincare brand photographer South Florida"
   - "luxury brand photographer Boca Raton"
   - "commercial photographer South Florida"
-ogImage: "/images/og-default.jpg"
+ogImage: "/images/lauren-garden.jpg"
 ---

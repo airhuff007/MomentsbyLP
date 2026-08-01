@@ -13,7 +13,7 @@ params:
   city: "Boca Raton"
   state: "FL"
   region: "South Florida"
-  ogImage: "/images/og-default.jpg"
+  ogImage: "/images/lauren-garden.jpg"
   social:
     instagram: "https://www.instagram.com/momentsbylp"
     facebook: ""

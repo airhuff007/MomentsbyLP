@@ -6,5 +6,5 @@ keywords:
   - "Boca Raton photographer Lauren"
   - "South Florida brand photographer"
   - "who is Moments by LP"
-ogImage: "/images/lauren-portrait.jpg"
+ogImage: "/images/lauren-garden.jpg"
 ---
