@@ -20,6 +20,7 @@ A collection of work from sessions across Boca Raton, Delray Beach, Palm Beach, 
 - [Maternity](/maternity-photographer-boca-raton/)
 - [Headshots](/headshots-boca-raton/)
 - [Commercial &amp; Editorial](/business-photography-boca-raton/)
+- [Luxury Property &amp; Hospitality](/luxury-property-photography/)
 - [Lifestyle](/lifestyle-photographer-boca-raton/)
 
 *Gallery images coming soon. [Follow on Instagram]({{ site.Params.social.instagram }}) for the latest work.*
