@@ -118,7 +118,7 @@
 </script>
 {{ end }}
 
-{{/* ── Blog + WebPage Schema (creative journal hub) ── */}}
+{{/* ── Blog + WebPage + Person Schema (creative journal hub) ── */}}
 {{ if and .IsSection (eq .Section "creative-journal") }}
 <script type="application/ld+json">
 {
@@ -129,6 +129,9 @@
   "url": "{{ .Permalink }}",
   "publisher": {
     "@id": "{{ site.BaseURL }}#business"
+  },
+  "author": {
+    "@id": "{{ site.BaseURL }}#lauren"
   }
 }
 </script>
@@ -141,7 +144,36 @@
   "url": "{{ .Permalink }}",
   "isPartOf": {
     "@id": "{{ site.BaseURL }}#business"
+  },
+  "about": {
+    "@id": "{{ site.BaseURL }}#lauren"
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "{{ site.BaseURL }}#lauren",
+  "name": "Lauren Huffman",
+  "jobTitle": "Commercial Photographer and Creative Director",
+  "url": "{{ site.BaseURL }}about/",
+  "worksFor": {
+    "@id": "{{ site.BaseURL }}#business"
+  },
+  "knowsAbout": [
+    "Creative direction",
+    "Commercial photography",
+    "Visual branding",
+    "Directing non-models",
+    "Creative entrepreneurship",
+    "Community over competition",
+    "South Florida creative collaboration",
+    "Color and visual consistency"
+  ],
+  "sameAs": [
+    "{{ site.Params.social.instagram }}"
+  ]
 }
 </script>
 {{ end }}

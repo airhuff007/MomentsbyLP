@@ -9,6 +9,7 @@ image: "/images/lauren-garden.jpg"
 imageAlt: "Lauren in the South Florida creative community"
 author: "Lauren Huffman"
 readingTime: "6 min"
+noindex: true
 keywords:
   - "creative community South Florida"
   - "photography collaboration"

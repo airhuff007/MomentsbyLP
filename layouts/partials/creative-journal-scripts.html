@@ -1,7 +1,6 @@
 <script>
 (function () {
   var forms = document.querySelectorAll('.cj-form');
-  if (!forms.length) return;
 
   function isValidEmail(value) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value || '').trim());
@@ -92,6 +91,40 @@
       if (eventName && window.dataLayer) {
         window.dataLayer.push({ event: eventName, label: el.textContent.trim() });
       }
+    });
+  });
+
+  /* Featured Ideas category filter */
+  var categoryButtons = document.querySelectorAll('button[data-cj-category]');
+  var items = document.querySelectorAll('[data-cj-item]');
+  var emptyState = document.querySelector('[data-cj-empty]');
+
+  function setCategory(slug) {
+    var visible = 0;
+    items.forEach(function (item) {
+      var match = slug === 'all' || item.getAttribute('data-cj-category') === slug;
+      item.hidden = !match;
+      if (match) visible += 1;
+    });
+    if (emptyState) emptyState.hidden = visible > 0;
+
+    categoryButtons.forEach(function (btn) {
+      var active = btn.getAttribute('data-cj-category') === slug;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+  }
+
+  categoryButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      setCategory(btn.getAttribute('data-cj-category') || 'all');
+    });
+  });
+
+  document.querySelectorAll('[data-cj-jump-category]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var slug = link.getAttribute('data-cj-jump-category');
+      if (slug) setCategory(slug);
     });
   });
 })();
