@@ -1,0 +1,14 @@
+{{/*
+  Titled panel wrapper around the join form.
+  Dict keys: idPrefix, variant, heading, intro, panelClass, id
+*/}}
+{{ $heading := .heading | default "Join the Creative Community" }}
+{{ $intro := .intro | default "Photographers, models, content creators, makeup artists, stylists, videographers, and brand owners — join Lauren's South Florida creative network." }}
+{{ $panelClass := .panelClass | default "cj-form-panel cj-form-panel--wide" }}
+{{ $id := .id | default "join-creative-community" }}
+
+<div id="{{ $id }}" class="{{ $panelClass }}">
+  <h3>{{ $heading }}</h3>
+  {{ with $intro }}<p class="cj-form-panel__intro">{{ . }}</p>{{ end }}
+  {{ partial "join-creative-community-form.html" . }}
+</div>

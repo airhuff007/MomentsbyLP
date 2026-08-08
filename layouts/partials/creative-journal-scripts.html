@@ -15,6 +15,8 @@
   }
 
   function validateField(field) {
+    if (field.closest('.cj-form__honeypot')) return true;
+
     if (field.type === 'checkbox') {
       var ok = !field.required || field.checked;
       showFieldError(field, !ok);
@@ -38,12 +40,52 @@
     return textOk;
   }
 
+  function setLoading(form, loading) {
+    var button = form.querySelector('button[type="submit"]');
+    if (!button) return;
+    button.disabled = loading;
+    button.setAttribute('aria-busy', loading ? 'true' : 'false');
+    var label = button.querySelector('.cj-form__btn-label');
+    var loadingLabel = button.querySelector('.cj-form__btn-loading');
+    if (label && loadingLabel) {
+      label.hidden = loading;
+      loadingLabel.hidden = !loading;
+    }
+  }
+
+  function setStatus(status, message, type) {
+    if (!status) return;
+    status.textContent = message;
+    status.className = 'cj-form__status' + (type ? ' cj-form__status--' + type : '');
+  }
+
+  function trackSubmit(form) {
+    var trackEvent = form.getAttribute('data-track-submit');
+    if (trackEvent && window.dataLayer) {
+      window.dataLayer.push({ event: trackEvent, form: form.getAttribute('data-form-name') });
+    }
+  }
+
+  function honeypotFilled(form) {
+    var pot = form.querySelector('.cj-form__honeypot input');
+    return !!(pot && String(pot.value || '').trim());
+  }
+
+  function successMessage(form) {
+    return form.getAttribute('data-success-message') ||
+      'Thank you. Your details look good. CRM submission will be enabled once the form endpoint is configured.';
+  }
+
   forms.forEach(function (form) {
+    if (form.getAttribute('data-cj-bound') === 'true') return;
+    form.setAttribute('data-cj-bound', 'true');
+
     var status = form.querySelector('.cj-form__status');
     var action = (form.getAttribute('action') || '').trim();
-    var trackEvent = form.getAttribute('data-track-submit');
+    var asyncSubmit = form.getAttribute('data-async') === 'true';
 
     form.querySelectorAll('input, select, textarea').forEach(function (field) {
+      if (field.closest('.cj-form__honeypot')) return;
       field.addEventListener('blur', function () {
         if (field.required || field.type === 'email') validateField(field);
       });
@@ -55,37 +97,84 @@
         if (!validateField(field)) valid = false;
       });
 
+      form.querySelectorAll('input[type="email"]').forEach(function (field) {
+        if (!validateField(field)) valid = false;
+      });
+
       if (!valid) {
         event.preventDefault();
-        if (status) {
-          status.textContent = 'Please complete the required fields highlighted above.';
-          status.className = 'cj-form__status cj-form__status--error';
-        }
+        setStatus(status, 'Please complete the required fields highlighted above.', 'error');
         var firstInvalid = form.querySelector('[aria-invalid="true"]');
         if (firstInvalid) firstInvalid.focus();
         return;
       }
 
-      if (!action) {
+      // Spam mitigation: honeypot filled → fake success, do not submit
+      if (honeypotFilled(form)) {
         event.preventDefault();
-        if (status) {
-          status.textContent = 'Thank you. Your details look good. CRM submission will be enabled once the form endpoint is configured.';
-          status.className = 'cj-form__status cj-form__status--success';
-        }
-        if (trackEvent && window.dataLayer) {
-          window.dataLayer.push({ event: trackEvent, form: form.getAttribute('data-form-name') });
-        }
+        setStatus(status, successMessage(form), 'success');
         form.reset();
         return;
       }
 
-      if (trackEvent && window.dataLayer) {
-        window.dataLayer.push({ event: trackEvent, form: form.getAttribute('data-form-name') });
+      if (!action) {
+        event.preventDefault();
+        setStatus(status, successMessage(form), 'success');
+        trackSubmit(form);
+        form.reset();
+        return;
       }
+
+      if (!asyncSubmit) {
+        setLoading(form, true);
+        trackSubmit(form);
+        return;
+      }
+
+      event.preventDefault();
+      setLoading(form, true);
+      setStatus(status, 'Submitting…', '');
+
+      var body = new FormData(form);
+      // Do not send honeypot value to CRM
+      body.delete('website');
+
+      fetch(action, {
+        method: 'POST',
+        body: body,
+        headers: { Accept: 'application/json' }
+      })
+        .then(function (response) {
+          if (!response.ok) {
+            return response.json().catch(function () { return {}; }).then(function (payload) {
+              var err = new Error((payload && payload.message) || 'Submission failed');
+              err.status = response.status;
+              throw err;
+            });
+          }
+          return response.json().catch(function () { return {}; });
+        })
+        .then(function () {
+          setStatus(status, successMessage(form), 'success');
+          trackSubmit(form);
+          form.reset();
+        })
+        .catch(function () {
+          setStatus(
+            status,
+            'Something went wrong sending your details. Please try again or email momentsbylpstudios@gmail.com.',
+            'error'
+          );
+        })
+        .finally(function () {
+          setLoading(form, false);
+        });
     });
   });
 
   document.querySelectorAll('[data-track]').forEach(function (el) {
+    if (el.getAttribute('data-cj-track-bound') === 'true') return;
+    el.setAttribute('data-cj-track-bound', 'true');
     el.addEventListener('click', function () {
       var eventName = el.getAttribute('data-track');
       if (eventName && window.dataLayer) {
