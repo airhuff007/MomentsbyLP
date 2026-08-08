@@ -47,14 +47,13 @@
           Spots are kept intentional so the community stays high-quality.
         </p>
       </div>
-      <div class="about-reveal" data-delay="160">
-        {{ partial "join-creative-community-panel.html" (dict
-          "idPrefix" "community-page"
-          "id" "join-creative-community"
-          "heading" "Creator Community Application"
-          "intro" "Tell us who you are and what you want to create. We will follow up with community updates and opportunities."
-        ) }}
-      </div>
+      {{/* Keep the form visible without scroll-reveal so lead capture is never opacity-hidden */}}
+      {{ partial "join-creative-community-panel.html" (dict
+        "idPrefix" "community-page"
+        "id" "join-creative-community"
+        "heading" "Creator Community Application"
+        "intro" "Tell us who you are and what you want to create. We will follow up with community updates and opportunities."
+      ) }}
     </div>
   </section>
 
