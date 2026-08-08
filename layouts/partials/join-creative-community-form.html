@@ -1,0 +1,171 @@
+{{/*
+  Reusable "Join the Creative Community" lead-capture form.
+  Extends the existing .cj-form architecture (validation + status in creative-journal-scripts.html).
+
+  Pass a dict:
+    idPrefix  — unique prefix for field IDs (default: "community")
+    variant   — "" | "compact" | "newsletter"
+*/}}
+{{ $idPrefix := .idPrefix | default "community" }}
+{{ $variant := .variant | default "" }}
+{{ $action := site.Params.creativeJournal.forms.communityJoinAction | default "" }}
+{{ $community := index site.Data "creator-community" }}
+{{ $formClass := "cj-form cj-form--community" }}
+{{ if eq $variant "newsletter" }}{{ $formClass = printf "%s cj-form--newsletter" $formClass }}{{ end }}
+{{ if eq $variant "compact" }}{{ $formClass = printf "%s cj-form--compact" $formClass }}{{ end }}
+
+<form
+  class="{{ $formClass }}"
+  action="{{ $action }}"
+  method="post"
+  novalidate
+  data-track-submit="creative_community_join_submit"
+  data-form-name="join-creative-community"
+  data-async="true"
+  data-success-message="Welcome to the community. Lauren will be in touch with next steps."
+>
+  <input type="hidden" name="source" value="join-creative-community" />
+  <input type="hidden" name="tags" value="community-member" />
+
+  {{/* Honeypot — leave empty. Hidden from assistive tech and sighted users. */}}
+  <div class="cj-form__honeypot" aria-hidden="true">
+    <label for="{{ $idPrefix }}-website">Website</label>
+    <input
+      id="{{ $idPrefix }}-website"
+      name="website"
+      type="text"
+      tabindex="-1"
+      autocomplete="off"
+      value=""
+    />
+  </div>
+
+  <div class="cj-form__grid">
+    <div class="cj-form__field">
+      <label for="{{ $idPrefix }}-first-name">First name</label>
+      <input
+        id="{{ $idPrefix }}-first-name"
+        name="first_name"
+        type="text"
+        autocomplete="given-name"
+        required
+      />
+      <p class="cj-form__error" role="alert" hidden>Please enter your first name.</p>
+    </div>
+    <div class="cj-form__field">
+      <label for="{{ $idPrefix }}-last-name">Last name</label>
+      <input
+        id="{{ $idPrefix }}-last-name"
+        name="last_name"
+        type="text"
+        autocomplete="family-name"
+        required
+      />
+      <p class="cj-form__error" role="alert" hidden>Please enter your last name.</p>
+    </div>
+  </div>
+
+  <div class="cj-form__grid">
+    <div class="cj-form__field">
+      <label for="{{ $idPrefix }}-email">Email</label>
+      <input
+        id="{{ $idPrefix }}-email"
+        name="email"
+        type="email"
+        autocomplete="email"
+        inputmode="email"
+        required
+      />
+      <p class="cj-form__error" role="alert" hidden>Please enter a valid email address.</p>
+    </div>
+    <div class="cj-form__field">
+      <label for="{{ $idPrefix }}-phone">Phone <span class="cj-form__optional">(optional)</span></label>
+      <input
+        id="{{ $idPrefix }}-phone"
+        name="phone"
+        type="tel"
+        autocomplete="tel"
+        inputmode="tel"
+      />
+    </div>
+  </div>
+
+  <div class="cj-form__grid">
+    <div class="cj-form__field">
+      <label for="{{ $idPrefix }}-instagram">Instagram</label>
+      <input
+        id="{{ $idPrefix }}-instagram"
+        name="instagram"
+        type="text"
+        autocomplete="username"
+        placeholder="@yourhandle"
+        required
+      />
+      <p class="cj-form__error" role="alert" hidden>Please enter your Instagram handle.</p>
+    </div>
+    <div class="cj-form__field">
+      <label for="{{ $idPrefix }}-city">City</label>
+      <input
+        id="{{ $idPrefix }}-city"
+        name="city"
+        type="text"
+        autocomplete="address-level2"
+        required
+      />
+      <p class="cj-form__error" role="alert" hidden>Please enter your city.</p>
+    </div>
+  </div>
+
+  <div class="cj-form__field">
+    <label for="{{ $idPrefix }}-role">Primary role</label>
+    <select id="{{ $idPrefix }}-role" name="primary_role" required>
+      <option value="">Select your primary role</option>
+      {{ range $community.roles }}
+      <option value="{{ .value }}">{{ .label }}</option>
+      {{ end }}
+    </select>
+    <p class="cj-form__error" role="alert" hidden>Please select your primary role.</p>
+  </div>
+
+  <fieldset class="cj-form__fieldset">
+    <legend>What are you interested in?</legend>
+    <ul role="list" class="cj-form__checks cj-form__checks--cols">
+      {{ range $community.interests }}
+      <li>
+        <input
+          id="{{ $idPrefix }}-{{ .value }}"
+          name="interests"
+          type="checkbox"
+          value="{{ .value }}"
+        />
+        <label for="{{ $idPrefix }}-{{ .value }}">{{ .label }}</label>
+      </li>
+      {{ end }}
+    </ul>
+  </fieldset>
+
+  <div class="cj-form__field cj-form__field--checkbox">
+    <input
+      id="{{ $idPrefix }}-consent"
+      name="consent"
+      type="checkbox"
+      value="yes"
+      required
+    />
+    <label for="{{ $idPrefix }}-consent">
+      I agree to join the Moments by LP Creator Community list and receive emails about community updates,
+      events, collaborations, and opportunities. I can unsubscribe anytime.
+    </label>
+    <p class="cj-form__error" role="alert" hidden>Please confirm consent to join the community.</p>
+  </div>
+
+  <button type="submit" class="btn btn--filled">
+    <span class="cj-form__btn-label">Join the Creative Community</span>
+    <span class="cj-form__btn-loading" hidden>Submitting&hellip;</span>
+  </button>
+  <p class="cj-form__status" role="status" aria-live="polite"></p>
+  <p class="cj-form__note"><small>South Florida creatives welcome — photographers, models, creators, MUAs, stylists, videographers, and brand owners.</small></p>
+  {{ if not $action }}
+  <p class="cj-form__note"><small>Community applications are being collected now. CRM delivery will be enabled once GoHighLevel is connected — your details are validated here first.</small></p>
+  {{ end }}
+</form>

@@ -1,0 +1,65 @@
+{{- /*
+  Behind-the-scenes → final image comparison.
+
+  Params:
+    btsSrc / btsAlt / btsCaption
+    finalSrc / finalAlt / finalCaption
+    btsWidth/btsHeight/finalWidth/finalHeight
+    orientation  horizontal pair layout hint
+    class
+    heading      optional comparison title
+*/ -}}
+{{- $btsSrc := partial "media/path.html" (.btsSrc | default "") -}}
+{{- $finalSrc := partial "media/path.html" (.finalSrc | default "") -}}
+{{- $btsAlt := .btsAlt | default "Behind the scenes" -}}
+{{- $finalAlt := .finalAlt | default "Final image" -}}
+{{- $btsWidth := .btsWidth | default 1200 -}}
+{{- $btsHeight := .btsHeight | default 1500 -}}
+{{- $finalWidth := .finalWidth | default 1200 -}}
+{{- $finalHeight := .finalHeight | default 1500 -}}
+{{- $class := trim (printf "media-compare %s" (.class | default "")) " " -}}
+
+<section class="{{ $class }}" aria-label="{{ .heading | default "Behind the scenes to final image" }}">
+  {{- with .heading -}}
+  <h3 class="media-compare__heading">{{ . }}</h3>
+  {{- end -}}
+  <div class="media-compare__grid">
+    <figure class="media-compare__panel media-compare__panel--bts">
+      <p class="media-compare__label">Behind the scenes</p>
+      <div class="media-compare__frame">
+        <img
+          src="{{ $btsSrc }}"
+          alt="{{ $btsAlt }}"
+          width="{{ $btsWidth }}"
+          height="{{ $btsHeight }}"
+          loading="lazy"
+          decoding="async"
+          class="media-compare__img"
+        >
+      </div>
+      {{- with .btsCaption -}}
+      <figcaption class="media-caption">{{ . | markdownify }}</figcaption>
+      {{- end -}}
+    </figure>
+    <figure class="media-compare__panel media-compare__panel--final">
+      <p class="media-compare__label">Final image</p>
+      <div class="media-compare__frame">
+        <img
+          src="{{ $finalSrc }}"
+          alt="{{ $finalAlt }}"
+          width="{{ $finalWidth }}"
+          height="{{ $finalHeight }}"
+          loading="lazy"
+          decoding="async"
+          class="media-compare__img"
+        >
+      </div>
+      {{- with .finalCaption -}}
+      <figcaption class="media-caption">{{ . | markdownify }}</figcaption>
+      {{- end -}}
+    </figure>
+  </div>
+  {{- with .caption -}}
+  <p class="media-compare__note media-caption">{{ . | markdownify }}</p>
+  {{- end -}}
+</section>

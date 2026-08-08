@@ -22,6 +22,7 @@ Every session is intentional, relaxed, and designed around you.
 - [Maternity Photography in Boca Raton](/maternity-photographer-boca-raton/) — beautiful bump sessions in natural light
 - [Lifestyle Photography](/lifestyle-photographer-boca-raton/) — authentic, documentary-style portraits
 - [Commercial Photography](/business-photography-boca-raton/) — editorial content for restaurants, retailers, and brands
+- [Luxury Property &amp; Hospitality Photography](/luxury-property-photography/) — lifestyle imagery for apartments, hotels, resorts, and vacation rentals
 - [Content Days](/content-days-boca-raton/) — bulk content creation for social media and marketing
 - [Seasonal Mini Sessions](/seasonal-mini-sessions-boca-raton/) — limited-spot holiday and seasonal minis
 

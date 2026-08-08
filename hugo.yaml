@@ -30,8 +30,11 @@ params:
     communityURL: "/creator-community/"
     eventsURL: "/magazine/events/"
     projectURL: "/book-a-brand-call/"
-    # TODO: Set CRM/form endpoints when MailerLite or AgentBoost forms are ready
+    # TODO: Set CRM/form endpoints when MailerLite / GoHighLevel are ready
+    # communityJoinAction: use "/.netlify/functions/community-join" after GHL env vars are set
+    # See docs/ghl-community-form.md
     forms:
+      communityJoinAction: ""
       communityWaitlistAction: ""
       speakingInquiryAction: ""
       newsletterAction: ""

@@ -1,0 +1,27 @@
+{{- /*
+  Resolve an authority media path.
+
+  Pass a string path, or a dict with "src".
+
+  Rules:
+    - Absolute site paths (/images/..., /media/..., /video/...) pass through
+    - Absolute URLs (http/https) pass through
+    - category/file.ext resolves under /media/authority/
+*/ -}}
+{{- $src := "" -}}
+{{- if reflect.IsMap . -}}
+  {{- $src = .src | default "" -}}
+{{- else -}}
+  {{- $src = . | default "" -}}
+{{- end -}}
+{{- $out := "" -}}
+{{- if $src -}}
+  {{- if or (hasPrefix $src "http://") (hasPrefix $src "https://") (hasPrefix $src "/") -}}
+    {{- $out = $src -}}
+  {{- else if strings.Contains $src "/" -}}
+    {{- $out = printf "/media/authority/%s" (strings.TrimPrefix "authority/" (strings.TrimPrefix "media/" $src)) -}}
+  {{- else -}}
+    {{- $out = $src -}}
+  {{- end -}}
+{{- end -}}
+{{- return $out -}}

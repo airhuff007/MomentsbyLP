@@ -9,6 +9,7 @@ image: "/images/lauren-camera.jpg"
 imageAlt: "Lauren directing a commercial photography session in South Florida"
 author: "Lauren Huffman"
 readingTime: "6 min"
+noindex: true
 keywords:
   - "commercial photography strategy"
   - "visual consistency brand photography"

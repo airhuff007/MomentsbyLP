@@ -32,7 +32,7 @@
       </p>
       <div class="pkg-hero__ctas about-reveal" data-delay="400">
         <a href="#featured-ideas" class="btn btn--filled" data-track="creative_journal_explore">Explore the Journal</a>
-        <a href="#community" class="btn" data-track="creative_community_click">Join the Creative Community</a>
+        <a href="{{ $cfg.communityURL | default "/creator-community/" }}#join-creative-community" class="btn" data-track="creative_community_click">Join the Creative Community</a>
       </div>
     </div>
   </section>
@@ -49,8 +49,29 @@
         </p>
       </div>
 
+      {{ with $cj.categories }}
+      <nav class="cj-categories about-reveal" data-delay="140" aria-label="Journal categories">
+        <ul role="list" class="cj-categories__list">
+          <li>
+            <button type="button" class="cj-categories__btn is-active" data-cj-category="all" aria-pressed="true">All</button>
+          </li>
+          {{ range . }}
+          <li>
+            <button type="button" class="cj-categories__btn" data-cj-category="{{ .slug }}" aria-pressed="false">{{ .title }}</button>
+          </li>
+          {{ end }}
+        </ul>
+      </nav>
+      {{ end }}
+
       {{ with $featuredPage }}
-      <article class="cj-featured about-reveal" data-delay="0">
+      <article
+        class="cj-featured about-reveal"
+        data-delay="0"
+        data-cj-item
+        data-cj-category="{{ .Params.category | urlize }}"
+        {{ if .Params.featured }}data-cj-featured="true"{{ end }}
+      >
         <div class="cj-featured__media">
           {{ with .Params.image }}
           <img
@@ -81,7 +102,11 @@
       <div class="cj-articles about-stagger">
         {{ range $supporting }}
         {{ $article := . }}
-        <article class="cj-article-card about-reveal">
+        <article
+          class="cj-article-card about-reveal"
+          data-cj-item
+          data-cj-category="{{ $article.Params.category | urlize }}"
+        >
           {{ with $article.Params.image }}
           <a {{ if not $article.Params.comingSoon }}href="{{ $article.Permalink }}"{{ end }} class="cj-article-card__media" tabindex="{{ if $article.Params.comingSoon }}-1{{ else }}0{{ end }}" data-track="creative_journal_article_click">
             <img
@@ -114,6 +139,8 @@
         {{ end }}
       </div>
       {{ end }}
+
+      <p class="cj-empty about-reveal" data-cj-empty hidden>No essays in this category yet. More ideas are on the way.</p>
     </div>
   </section>
 
@@ -128,7 +155,13 @@
       <div class="cj-expertise about-stagger">
         {{ range $cj.expertise }}
         <article class="cj-expertise-card about-reveal">
-          <h3><a href="/creative-journal/#featured-ideas">{{ .title }}</a></h3>
+          <h3>
+            {{ if eq .slug "behind-the-work" }}
+            <a href="#behind-the-work">{{ .title }}</a>
+            {{ else }}
+            <a href="#featured-ideas" data-cj-jump-category="{{ .slug }}">{{ .title }}</a>
+            {{ end }}
+          </h3>
           <p>{{ .description }}</p>
         </article>
         {{ end }}
@@ -138,7 +171,7 @@
 
 
   {{/* ══ BEHIND THE WORK ══ */}}
-  <section class="pkg-section cj-section about-page__section" aria-labelledby="cj-behind-heading">
+  <section id="behind-the-work" class="pkg-section cj-section about-page__section" aria-labelledby="cj-behind-heading">
     <div class="container">
       <div class="pkg-section__header">
         <p class="eyebrow about-reveal">Case Studies</p>
@@ -192,7 +225,7 @@
         {{ end }}
       </div>
       <div class="cj-section__ctas about-reveal" data-delay="160">
-        <a href="{{ $cfg.communityURL | default "/creator-community/" }}" class="btn btn--filled" data-track="creative_community_click">Join the Community</a>
+        <a href="{{ $cfg.communityURL | default "/creator-community/" }}#join-creative-community" class="btn btn--filled" data-track="creative_community_click">Join the Community</a>
         <a href="{{ $cfg.eventsURL | default "/magazine/events/" }}" class="btn" data-track="event_page_click">View Upcoming Events</a>
       </div>
     </div>
@@ -281,7 +314,7 @@
       <h2>Have an idea worth creating?</h2>
       <div class="event-cta-bottom__buttons">
         <a href="{{ $cfg.projectURL | default "/book-a-brand-call/" }}" class="btn btn--filled" data-track="project_inquiry_click">Start a Project</a>
-        <a href="{{ $cfg.communityURL | default "/creator-community/" }}" class="btn" data-track="creative_community_click">Join the Community</a>
+        <a href="{{ $cfg.communityURL | default "/creator-community/" }}#join-creative-community" class="btn" data-track="creative_community_click">Join the Community</a>
       </div>
     </div>
   </section>

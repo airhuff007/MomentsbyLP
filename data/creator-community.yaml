@@ -1,0 +1,38 @@
+# Creator Community join form — roles and interest options
+# Tag values map to GoHighLevel contact tags. See docs/ghl-community-form.md.
+
+roles:
+  - label: Photographer
+    value: role-photographer
+  - label: Model
+    value: role-model
+  - label: Content Creator
+    value: role-content-creator
+  - label: Videographer
+    value: role-videographer
+  - label: Makeup Artist
+    value: role-makeup-artist
+  - label: Stylist
+    value: role-stylist
+  - label: Brand/Business Owner
+    value: role-brand-owner
+  - label: Other
+    value: role-other
+
+interests:
+  - label: Collaborations
+    value: interest-collaboration
+  - label: Educational events
+    value: interest-education
+  - label: Styled shoots
+    value: interest-styled-shoots
+  - label: Portfolio building
+    value: interest-portfolio
+  - label: Creative Coffee
+    value: interest-creative-coffee
+  - label: Casting opportunities
+    value: interest-casting
+  - label: Photography education
+    value: interest-photography-education
+  - label: Community calls
+    value: interest-community-calls
