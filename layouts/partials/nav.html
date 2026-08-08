@@ -3,11 +3,50 @@
 
     <a href="/" class="nav-brand" aria-label="Moments by LP — Home">Moments by LP</a>
 
-    <nav aria-label="Main navigation">
+    <button
+      type="button"
+      class="nav-toggle"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+      aria-label="Open menu"
+    >
+      <span class="nav-toggle__bar" aria-hidden="true"></span>
+      <span class="nav-toggle__bar" aria-hidden="true"></span>
+      <span class="nav-toggle__bar" aria-hidden="true"></span>
+    </button>
+
+    <nav id="primary-nav" class="nav-panel" aria-label="Main navigation">
       <ul role="list" class="nav-primary">
 
-        <li><a href="/work-with-me/">Work With Me</a></li>
-        <li><a href="https://api.agentboostsolutions.com/widget/booking/WXHLsqReFCa4m3hZoa83" class="nav-cta">Book a Call</a></li>
+        <li><a href="/work-with-me/">Work</a></li>
+
+        <li class="nav-has-dropdown">
+          <a href="/commercial/" aria-haspopup="true" aria-expanded="false">Commercial</a>
+          <ul role="list" class="nav-dropdown">
+            <li><a href="/commercial/">Commercial Overview</a></li>
+            <li><a href="/commercial/brand-launch/">Brand Launch</a></li>
+            <li><a href="/commercial/product-photography/">Product Photography</a></li>
+            <li><a href="/luxury-property-photography/">Luxury Property &amp; Hospitality</a></li>
+            <li><a href="/commercial/content-partnership/">Content Partnership</a></li>
+            <li><a href="/commercial/process/">Process</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-has-dropdown">
+          <a href="/branding-photographer-boca-raton/" aria-haspopup="true" aria-expanded="false">Personal Brands</a>
+          <ul role="list" class="nav-dropdown">
+            <li><a href="/branding-photographer-boca-raton/">Personal Brand Sessions</a></li>
+            <li><a href="/headshots-boca-raton/">Headshots</a></li>
+            <li><a href="/family-photographer-boca-raton/">Portraits &amp; Families</a></li>
+            <li><a href="/couples-photography-boca-raton/">Couples</a></li>
+            <li><a href="/maternity-photographer-boca-raton/">Maternity</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/creative-journal/">Journal</a></li>
+        <li><a href="/creator-community/">Community</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/book-a-brand-call/" class="nav-cta">Inquire</a></li>
 
       </ul>
     </nav>
