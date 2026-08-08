@@ -4373,5 +4373,6 @@ nav[aria-label="Breadcrumb"] a:hover { color: var(--color-text); }
 
   .lpp-gallery__link:hover img,
   .lpp-gallery__link:focus-visible img {
-    transform: none;  }
+    transform: none;
+  }
 }
