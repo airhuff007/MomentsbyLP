@@ -9,11 +9,14 @@ keywords:
   - "Instagram workshop Boca Raton"
 layout: "event-landing"
 
+eventName: "Content & Coffee"
+eventEyebrow: "Moments by LP Presents"
 eventTagline: "Stop overthinking content. Start creating it."
 eventDate: "Saturday, September 27"
 eventTime: "10:00 AM – 12:00 PM"
 eventLocation: "Boca Raton, FL"
 eventLocationDetail: "Location shared upon ticket purchase"
+ticketEmailSubject: "Content & Coffee — September 27"
 ticketURL: ""
 
 earlyBirdPrice: "29"

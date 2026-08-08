@@ -1,10 +1,12 @@
 {{ define "main" }}
+{{ $eventName := .Params.eventName | default .Title }}
+{{ $mailSubject := .Params.ticketEmailSubject | default $eventName }}
 
 {{/* ══ EVENT HERO ══ */}}
-<section class="event-hero" aria-label="Content and Coffee — Event">
+<section class="event-hero" aria-label="{{ $eventName }} — Event">
   <div class="event-hero__inner">
-    <p class="event-hero__eyebrow">Moments by LP Presents</p>
-    <h1 class="event-hero__title">Content &amp; Coffee</h1>
+    <p class="event-hero__eyebrow">{{ .Params.eventEyebrow | default "Moments by LP Presents" }}</p>
+    <h1 class="event-hero__title">{{ $eventName }}</h1>
     <p class="event-hero__tagline">{{ .Params.eventTagline }}</p>
     <div class="event-hero__meta">
       <span>{{ .Params.eventDate }}</span>
@@ -17,7 +19,7 @@
       {{ if .Params.ticketURL }}
       <a href="{{ .Params.ticketURL }}" class="btn btn--filled event-hero__cta" rel="noopener" target="_blank">Get Your Ticket</a>
       {{ else }}
-      <a href="mailto:{{ site.Params.email }}?subject=Content %26 Coffee — September 27" class="btn btn--filled event-hero__cta">Reserve Your Spot</a>
+      <a href="mailto:{{ site.Params.email }}?subject={{ $mailSubject | urlquery }}" class="btn btn--filled event-hero__cta">Reserve Your Spot</a>
       {{ end }}
       <a href="#event-pricing" class="btn event-hero__cta--outline">See Pricing</a>
     </div>
@@ -160,7 +162,7 @@
         {{ if .Params.ticketURL }}
         <a href="{{ .Params.ticketURL }}" class="btn btn--filled" rel="noopener" target="_blank">Get Early Bird Ticket</a>
         {{ else }}
-        <a href="mailto:{{ site.Params.email }}?subject=Content %26 Coffee — Early Bird" class="btn btn--filled">Reserve Early Bird</a>
+        <a href="mailto:{{ site.Params.email }}?subject={{ printf "%s — Early Bird" $mailSubject | urlquery }}" class="btn btn--filled">Reserve Early Bird</a>
         {{ end }}
       </article>
 
@@ -178,7 +180,7 @@
         {{ if .Params.ticketURL }}
         <a href="{{ .Params.ticketURL }}" class="btn btn--filled" rel="noopener" target="_blank">Get Your Ticket</a>
         {{ else }}
-        <a href="mailto:{{ site.Params.email }}?subject=Content %26 Coffee — General" class="btn btn--filled">Reserve Your Spot</a>
+        <a href="mailto:{{ site.Params.email }}?subject={{ printf "%s — General" $mailSubject | urlquery }}" class="btn btn--filled">Reserve Your Spot</a>
         {{ end }}
       </article>
 
@@ -195,7 +197,7 @@
         {{ if .Params.ticketURL }}
         <a href="{{ .Params.ticketURL }}" class="btn" rel="noopener" target="_blank">Get VIP Access</a>
         {{ else }}
-        <a href="mailto:{{ site.Params.email }}?subject=Content %26 Coffee — VIP" class="btn">Reserve VIP</a>
+        <a href="mailto:{{ site.Params.email }}?subject={{ printf "%s — VIP" $mailSubject | urlquery }}" class="btn">Reserve VIP</a>
         {{ end }}
       </article>
 
@@ -247,7 +249,7 @@
       {{ if .Params.ticketURL }}
       <a href="{{ .Params.ticketURL }}" class="btn btn--filled" rel="noopener" target="_blank">Get Your Ticket</a>
       {{ else }}
-      <a href="mailto:{{ site.Params.email }}?subject=Content %26 Coffee — September 27" class="btn btn--filled">Reserve Your Spot</a>
+      <a href="mailto:{{ site.Params.email }}?subject={{ $mailSubject | urlquery }}" class="btn btn--filled">Reserve Your Spot</a>
       {{ end }}
       <p class="event-cta-bottom__detail">{{ .Params.eventLocationDetail }}</p>
     </div>
