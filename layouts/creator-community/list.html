@@ -1,0 +1,65 @@
+{{ define "main" }}
+<div class="about-page community-page">
+
+  {{ partial "editorial-cameras.html" . }}
+
+  <section class="pkg-hero about-hero about-page__section" aria-labelledby="community-heading">
+    <div class="about-hero__bg" aria-hidden="true">
+      <img
+        src="/images/lauren-camera.jpg"
+        alt=""
+        width="1170"
+        height="1454"
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+    <div class="about-hero__overlay" aria-hidden="true"></div>
+    <div class="container about-hero__inner">
+      <p class="eyebrow about-reveal" data-delay="0">Moments by LP</p>
+      <h1 id="community-heading" class="about-reveal" data-delay="100">South Florida Creator Community</h1>
+      <p class="pkg-hero__lead about-reveal" data-delay="200">You don&rsquo;t have to build your creative career alone.</p>
+      <p class="pkg-hero__subtitle about-reveal" data-delay="300">
+        A growing network of photographers, models, content creators, makeup artists, stylists,
+        videographers, and brand owners across Boca Raton and Palm Beach County.
+      </p>
+      <div class="pkg-hero__ctas about-reveal" data-delay="400">
+        <a href="#join-creative-community" class="btn btn--filled" data-track="creative_community_click">Join the Community</a>
+        <a href="/magazine/events/" class="btn" data-track="event_page_click">View Upcoming Events</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pkg-section about-page__section" aria-labelledby="community-content-heading">
+    <div class="container community-page__content">
+      <h2 id="community-content-heading" class="visually-hidden">About the community</h2>
+      {{ .Content }}
+    </div>
+  </section>
+
+  <section class="pkg-section pkg-section--alt about-page__section" aria-labelledby="join-heading">
+    <div class="container">
+      <div class="pkg-section__header">
+        <p class="eyebrow about-reveal">Application</p>
+        <h2 id="join-heading" class="about-reveal" data-delay="80">Join the Creative Community</h2>
+        <p class="about-reveal" data-delay="120">
+          Fill out the form below to join Lauren&rsquo;s South Florida creative network.
+          Spots are kept intentional so the community stays high-quality.
+        </p>
+      </div>
+      <div class="about-reveal" data-delay="160">
+        {{ partial "join-creative-community-panel.html" (dict
+          "idPrefix" "community-page"
+          "id" "join-creative-community"
+          "heading" "Creator Community Application"
+          "intro" "Tell us who you are and what you want to create. We will follow up with community updates and opportunities."
+        ) }}
+      </div>
+    </div>
+  </section>
+
+</div>
+
+{{ partial "editorial-animations.html" . }}
+{{ partial "creative-journal-scripts.html" . }}
+{{ end }}
