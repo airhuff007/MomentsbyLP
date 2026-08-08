@@ -10,12 +10,6 @@ keywords:
   - "creative networking South Florida"
 ---
 
-## South Florida Creator Community
-
-You don&rsquo;t have to build your creative career alone.
-
-The Moments by LP Creator Community is a growing network of photographers, entrepreneurs, coaches, stylists, designers, and creatives in South Florida. Together, we collaborate, create, and grow.
-
 ## What the Community Offers
 
 ### Portfolio Days
@@ -40,14 +34,9 @@ Templates, guides, and educational content for photographers and creative entrep
 
 - Photographers (all levels) in South Florida
 - Models and talent in Palm Beach County
-- Creative entrepreneurs and brand builders
+- Content creators and videographers
 - Stylists, makeup artists, and hair artists
+- Brand owners and creative entrepreneurs
 - Coaches and wellness professionals building a personal brand
 
-## Join the Community
-
-Fill out the application below to join the South Florida Creator Community. Spots are limited to keep the community intentional and high-quality.
-
-[Apply to Join →](/contact/)
-
-*Already a member? Check the community calendar for upcoming events.*
+Already a member? Check the [community calendar](/magazine/events/) for upcoming events.

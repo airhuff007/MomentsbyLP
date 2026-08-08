@@ -1,0 +1,22 @@
+{{/*
+  Shortcode: {{< join-creative-community >}}
+  Optional params: idPrefix, variant, heading, intro, panel="true|false"
+*/}}
+{{ $panel := .Get "panel" | default "true" }}
+{{ $ctx := dict
+  "idPrefix" (.Get "idPrefix" | default (printf "sc-%d" .Ordinal))
+  "variant" (.Get "variant" | default "")
+  "heading" (.Get "heading" | default "Join the Creative Community")
+  "intro" (.Get "intro" | default "")
+  "id" (.Get "id" | default (printf "join-creative-community-%d" .Ordinal))
+}}
+{{ if eq $panel "false" }}
+  {{ partial "join-creative-community-form.html" $ctx }}
+{{ else }}
+  {{ partial "join-creative-community-panel.html" $ctx }}
+{{ end }}
+{{/* Ensure form scripts load when shortcode is used outside Creative Journal */}}
+{{ if not (.Page.Scratch.Get "cjFormScriptsLoaded") }}
+  {{ .Page.Scratch.Set "cjFormScriptsLoaded" true }}
+  {{ partial "creative-journal-scripts.html" . }}
+{{ end }}

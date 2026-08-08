@@ -3518,6 +3518,98 @@ nav[aria-label="Breadcrumb"] a:hover { color: var(--color-text); }
   margin-bottom: 1.25rem;
 }
 
+.cj-form-panel__intro {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-muted);
+  margin: -0.5rem 0 1.5rem;
+}
+
+.cj-form__honeypot {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.cj-form__optional {
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--color-muted);
+  font-weight: 400;
+}
+
+.cj-form__checks--cols {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem 1.25rem;
+}
+
+.cj-form button[type="submit"][disabled] {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.cj-form--compact .cj-form__fieldset {
+  padding: 0.85rem 1rem 0.6rem;
+}
+
+.community-page__content {
+  max-width: 720px;
+}
+
+.community-page__content h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.community-page__content h3 {
+  margin-top: 1.75rem;
+  margin-bottom: 0.65rem;
+  font-size: 1.15rem;
+}
+
+.community-page__content p,
+.community-page__content li {
+  font-family: var(--font-sans);
+  line-height: 1.75;
+  color: var(--color-muted);
+}
+
+.community-page__content ul {
+  margin: 0.75rem 0 1.25rem 1.1rem;
+}
+
+.community-cta {
+  padding: var(--section-pad) var(--container-pad);
+  background:
+    linear-gradient(135deg, rgba(196, 168, 130, 0.16), transparent 55%),
+    var(--color-bg-alt);
+}
+
+.community-cta__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.community-cta__inner p {
+  font-family: var(--font-sans);
+  color: var(--color-muted);
+  line-height: 1.7;
+  margin: 0.85rem auto 1.5rem;
+  max-width: 38rem;
+}
+
+.community-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  justify-content: center;
+}
+
 .cj-form__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3764,7 +3856,8 @@ nav[aria-label="Breadcrumb"] a:hover { color: var(--color-text); }
 }
 
 @media (max-width: 768px) {
-  .cj-form__grid {
+  .cj-form__grid,
+  .cj-form__checks--cols {
     grid-template-columns: 1fr;
   }
 

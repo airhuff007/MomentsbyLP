@@ -32,7 +32,7 @@
       </p>
       <div class="pkg-hero__ctas about-reveal" data-delay="400">
         <a href="#featured-ideas" class="btn btn--filled" data-track="creative_journal_explore">Explore the Journal</a>
-        <a href="#community" class="btn" data-track="creative_community_click">Join the Creative Community</a>
+        <a href="{{ $cfg.communityURL | default "/creator-community/" }}#join-creative-community" class="btn" data-track="creative_community_click">Join the Creative Community</a>
       </div>
     </div>
   </section>
@@ -192,7 +192,7 @@
         {{ end }}
       </div>
       <div class="cj-section__ctas about-reveal" data-delay="160">
-        <a href="{{ $cfg.communityURL | default "/creator-community/" }}" class="btn btn--filled" data-track="creative_community_click">Join the Community</a>
+        <a href="{{ $cfg.communityURL | default "/creator-community/" }}#join-creative-community" class="btn btn--filled" data-track="creative_community_click">Join the Community</a>
         <a href="{{ $cfg.eventsURL | default "/magazine/events/" }}" class="btn" data-track="event_page_click">View Upcoming Events</a>
       </div>
     </div>
@@ -281,7 +281,7 @@
       <h2>Have an idea worth creating?</h2>
       <div class="event-cta-bottom__buttons">
         <a href="{{ $cfg.projectURL | default "/book-a-brand-call/" }}" class="btn btn--filled" data-track="project_inquiry_click">Start a Project</a>
-        <a href="{{ $cfg.communityURL | default "/creator-community/" }}" class="btn" data-track="creative_community_click">Join the Community</a>
+        <a href="{{ $cfg.communityURL | default "/creator-community/" }}#join-creative-community" class="btn" data-track="creative_community_click">Join the Community</a>
       </div>
     </div>
   </section>
