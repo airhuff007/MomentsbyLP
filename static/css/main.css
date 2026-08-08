@@ -4048,3 +4048,237 @@ nav[aria-label="Breadcrumb"] a:hover { color: var(--color-text); }
     display: block;
   }
 }
+
+
+/* ══════════════════════════════════════════
+   LUXURY PROPERTY PHOTOGRAPHY PAGE
+   Extends existing commercial/pkg patterns.
+   ══════════════════════════════════════════ */
+.lpp-hero .pkg-hero__subtitle {
+  max-width: 680px;
+}
+
+.lpp-positioning.about-intro__grid,
+.lpp-dat.about-intro__grid {
+  max-width: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lpp-hero-visual {
+  margin: 0;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-alt);
+}
+
+.lpp-hero-visual img {
+  display: block;
+  width: 100%;
+  max-height: min(68vh, 720px);
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+.lpp-positioning .about-intro__text p,
+.lpp-dat .about-intro__text p {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-muted);
+  line-height: 1.8;
+  margin: 0 0 1.25rem;
+}
+
+.lpp-positioning .about-intro__text p:last-child,
+.lpp-dat .about-intro__text p:last-child {
+  margin-bottom: 0;
+}
+
+.lpp-dat .about-intro__text h2 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+}
+
+.lpp-support-note {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  line-height: 1.7;
+  text-align: center;
+  max-width: 640px;
+  margin: 3rem auto 0;
+}
+
+.lpp-case-intro {
+  max-width: 720px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.lpp-case-intro p {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-muted);
+  line-height: 1.8;
+  margin: 0 0 1rem;
+}
+
+.lpp-case-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.lpp-placeholder-note {
+  font-size: 0.85rem !important;
+  color: var(--color-muted);
+  border-top: 1px solid var(--color-border);
+  padding-top: 1rem;
+  margin-top: 1.25rem !important;
+}
+
+.lpp-services-grid {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.lpp-services-grid .pb-include-block {
+  grid-column: span 2;
+}
+
+.lpp-services-grid .pb-include-block:nth-child(4),
+.lpp-services-grid .pb-include-block:nth-child(5) {
+  grid-column: span 3;
+}
+
+.lpp-dat__list {
+  margin-top: 1.25rem;
+}
+
+.lpp-gallery {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: clamp(12px, 2vw, 20px);
+  margin-bottom: 3rem;
+}
+
+.lpp-gallery__item {
+  grid-column: span 2;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.lpp-gallery__item:nth-child(4),
+.lpp-gallery__item:nth-child(5) {
+  grid-column: span 3;
+}
+
+.lpp-gallery__link {
+  display: block;
+  overflow: hidden;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+}
+
+.lpp-gallery__link img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.lpp-gallery__link:hover img,
+.lpp-gallery__link:focus-visible img {
+  transform: scale(1.03);
+}
+
+.lpp-gallery__item figcaption h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.35rem;
+}
+
+.lpp-gallery__item figcaption p {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.lpp-insight {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.lpp-scope-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 400;
+  margin: 0 0 0.75rem;
+}
+
+.pkg-industries__tag a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pkg-industries__tag a:hover,
+.pkg-industries__tag a:focus-visible {
+  color: var(--color-text);
+}
+
+@media (max-width: 900px) {
+  .lpp-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lpp-gallery__item,
+  .lpp-gallery__item:nth-child(4),
+  .lpp-gallery__item:nth-child(5) {
+    grid-column: span 1;
+  }
+
+  .lpp-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lpp-services-grid .pb-include-block,
+  .lpp-services-grid .pb-include-block:nth-child(4),
+  .lpp-services-grid .pb-include-block:nth-child(5) {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .lpp-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .lpp-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lpp-positioning.about-intro__grid,
+  .lpp-dat.about-intro__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .lpp-hero-visual img {
+    max-height: 48vh;
+  }
+
+  .lpp-dat .pkg-hero__ctas {
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lpp-gallery__link img {
+    transition: none;
+  }
+
+  .lpp-gallery__link:hover img,
+  .lpp-gallery__link:focus-visible img {
+    transform: none;  }
+}
