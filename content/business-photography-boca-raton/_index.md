@@ -28,6 +28,8 @@ On-location or lifestyle product images for boutiques and retail brands in Palm 
 **Real Estate Photography**
 Interior and exterior photography for residential and commercial properties in Boca Raton. Bright, airy images that sell.
 
+For lifestyle-driven campaigns for luxury apartments, hotels, resorts, and vacation rentals, see [Luxury Property &amp; Hospitality Photography](/luxury-property-photography/).
+
 **Corporate Event Photography**
 Conferences, team days, networking events, and charity events throughout South Florida.
 
