@@ -1,0 +1,12 @@
+{{- partial "media/bts-video.html" (dict
+  "src" (.Get "src")
+  "poster" (.Get "poster")
+  "alt" (.Get "alt")
+  "caption" (.Get "caption")
+  "width" (.Get "width")
+  "height" (.Get "height")
+  "orientation" (.Get "orientation")
+  "loading" (.Get "loading")
+  "class" (.Get "class")
+  "loop" (ne (.Get "loop") "false")
+) -}}

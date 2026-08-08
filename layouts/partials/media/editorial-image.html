@@ -1,0 +1,69 @@
+{{- /*
+  Responsive editorial image.
+
+  Params (dict):
+    src          (required) image path
+    alt          (required for meaningful images; empty for decorative)
+    caption      optional figure caption / educational note
+    width        intrinsic width (default 1600)
+    height       intrinsic height (default 2000)
+    sizes        sizes attribute (default editorial)
+    srcset       optional full srcset string
+    loading      lazy|eager (default lazy)
+    decoding     async|sync|auto (default async)
+    fetchpriority optional high|low|auto
+    class        extra classes
+    orientation  horizontal|vertical|square (default vertical)
+    decorative   bool — forces empty alt + aria-hidden
+*/ -}}
+{{- $src := partial "media/path.html" (.src | default "") -}}
+{{- $alt := .alt | default "" -}}
+{{- $decorative := .decorative | default false -}}
+{{- if $decorative -}}{{- $alt = "" -}}{{- end -}}
+{{- $width := .width | default 1600 -}}
+{{- $height := .height | default 2000 -}}
+{{- $orientation := .orientation | default "vertical" -}}
+{{- $loading := .loading | default "lazy" -}}
+{{- $decoding := .decoding | default "async" -}}
+{{- $sizes := .sizes | default "(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 960px" -}}
+{{- $class := trim (printf "media-editorial media-editorial--%s %s" $orientation (.class | default "")) " " -}}
+{{- $fallback := partial "media/path.html" (.fallback | default "") -}}
+{{- $srcset := .srcset | default "" -}}
+
+<figure class="{{ $class }}"{{ if $decorative }} aria-hidden="true"{{ end }}>
+  <div class="media-editorial__frame">
+    {{- if and $fallback (ne $fallback $src) -}}
+    <picture>
+      <source srcset="{{ with $srcset }}{{ . }}{{ else }}{{ $src }}{{ end }}" type="image/webp" sizes="{{ $sizes }}">
+      <img
+        src="{{ $fallback }}"
+        {{ with $srcset }}srcset="{{ . }}"{{ end }}
+        sizes="{{ $sizes }}"
+        alt="{{ $alt }}"
+        width="{{ $width }}"
+        height="{{ $height }}"
+        loading="{{ $loading }}"
+        decoding="{{ $decoding }}"
+        {{ with .fetchpriority }}fetchpriority="{{ . }}"{{ end }}
+        class="media-editorial__img"
+      >
+    </picture>
+    {{- else -}}
+    <img
+      src="{{ $src }}"
+      {{ with $srcset }}srcset="{{ . }}"{{ end }}
+      {{ if $srcset }}sizes="{{ $sizes }}"{{ end }}
+      alt="{{ $alt }}"
+      width="{{ $width }}"
+      height="{{ $height }}"
+      loading="{{ $loading }}"
+      decoding="{{ $decoding }}"
+      {{ with .fetchpriority }}fetchpriority="{{ . }}"{{ end }}
+      class="media-editorial__img"
+    >
+    {{- end -}}
+  </div>
+  {{- with .caption -}}
+  <figcaption class="media-caption">{{ . | markdownify }}</figcaption>
+  {{- end -}}
+</figure>

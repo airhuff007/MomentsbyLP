@@ -1,0 +1,44 @@
+{{- /*
+  Lauren quote / pull-quote over supporting imagery.
+
+  Params:
+    quote        (required)
+    cite         optional attribution (default Lauren)
+    src          supporting image
+    alt          image alt (empty if decorative)
+    width/height orientation
+    class
+    overlay      dark|soft|none (default soft)
+*/ -}}
+{{- $quote := .quote | default "" -}}
+{{- $cite := .cite | default "Lauren Huffman" -}}
+{{- $src := partial "media/path.html" (.src | default "") -}}
+{{- $alt := .alt | default "" -}}
+{{- $width := .width | default 2400 -}}
+{{- $height := .height | default 1600 -}}
+{{- $orientation := .orientation | default "horizontal" -}}
+{{- $overlay := .overlay | default "soft" -}}
+{{- $class := trim (printf "media-pullquote media-pullquote--%s media-pullquote--overlay-%s %s" $orientation $overlay (.class | default "")) " " -}}
+
+<figure class="{{ $class }}">
+  {{- if $src -}}
+  <div class="media-pullquote__media">
+    <img
+      src="{{ $src }}"
+      alt="{{ $alt }}"
+      width="{{ $width }}"
+      height="{{ $height }}"
+      loading="lazy"
+      decoding="async"
+      class="media-pullquote__img"
+    >
+    <div class="media-pullquote__veil" aria-hidden="true"></div>
+  </div>
+  {{- end -}}
+  <blockquote class="media-pullquote__quote">
+    <p>&ldquo;{{ $quote }}&rdquo;</p>
+    {{- with $cite -}}
+    <footer><cite>{{ . }}</cite></footer>
+    {{- end -}}
+  </blockquote>
+</figure>

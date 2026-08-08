@@ -1,0 +1,59 @@
+{{- /*
+  Muted / autoplay / looping short BTS clip with poster fallback.
+
+  Params:
+    src          (required) mp4 path
+    poster       (recommended) still image shown before play / reduced-motion
+    alt          accessible description (used on poster/fallback)
+    width        default 1920
+    height       default 1080
+    orientation  horizontal|vertical (default horizontal)
+    class        extra classes
+    loading      for poster image (default lazy)
+    loop         default true
+    maxSeconds   informational only; keep clips short in export
+*/ -}}
+{{- $src := partial "media/path.html" (.src | default "") -}}
+{{- $poster := partial "media/path.html" (.poster | default "") -}}
+{{- $alt := .alt | default "Behind-the-scenes video from Moments by LP" -}}
+{{- $width := .width | default 1920 -}}
+{{- $height := .height | default 1080 -}}
+{{- $orientation := .orientation | default "horizontal" -}}
+{{- $loop := true -}}
+{{- if isset . "loop" -}}{{- $loop = .loop -}}{{- end -}}
+{{- $loading := .loading | default "lazy" -}}
+{{- $class := trim (printf "media-video media-video--bts media-video--%s %s" $orientation (.class | default "")) " " -}}
+
+<figure class="{{ $class }}" data-media-video="bts">
+  <div class="media-video__frame">
+    <video
+      class="media-video__el"
+      data-media-autoplay="true"
+      muted
+      playsinline
+      preload="none"
+      {{ if $loop }}loop{{ end }}
+      {{ with $poster }}poster="{{ . }}"{{ end }}
+      width="{{ $width }}"
+      height="{{ $height }}"
+      aria-label="{{ $alt }}"
+    >
+      <source src="{{ $src }}" type="video/mp4">
+    </video>
+    {{- with $poster -}}
+    <img
+      class="media-video__fallback"
+      src="{{ . }}"
+      alt="{{ $alt }}"
+      width="{{ $width }}"
+      height="{{ $height }}"
+      loading="{{ $loading }}"
+      decoding="async"
+      hidden
+    >
+    {{- end -}}
+  </div>
+  {{- with .caption -}}
+  <figcaption class="media-caption">{{ . | markdownify }}</figcaption>
+  {{- end -}}
+</figure>

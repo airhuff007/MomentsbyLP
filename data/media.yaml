@@ -1,0 +1,90 @@
+# Authority media taxonomy for Moments by LP.
+# Source of truth for category folders under static/media/authority/.
+# See docs/media-architecture.md for editor conventions.
+
+root: /media/authority
+
+categories:
+  - id: directing
+    label: Directing
+    description: Lauren directing talent on set — posing, pacing, and presence.
+  - id: lighting
+    label: Lighting
+    description: Lighting setups, demonstrations, and on-set light work.
+  - id: creative-direction
+    label: Creative Direction
+    description: Mood boards in motion, art direction, and visual language decisions.
+  - id: client-experience
+    label: Client Experience
+    description: Client interactions, wardrobe checks, and collaborative moments.
+  - id: commercial-production
+    label: Commercial Production
+    description: Full commercial production days, crew, and set energy.
+  - id: teaching
+    label: Teaching
+    description: Workshops, mentoring, and educational demonstrations.
+  - id: community
+    label: Community
+    description: Creator community gatherings and collaborative events.
+  - id: speaking
+    label: Speaking
+    description: Speaking engagements, panels, and podcast appearances.
+  - id: south-florida
+    label: South Florida
+    description: Lifestyle and location imagery rooted in South Florida.
+  - id: brand-portraits
+    label: Brand Portraits
+    description: Portraiture of Lauren for brand and authority surfaces.
+  - id: final-work
+    label: Final Work
+    description: Finished delivered imagery used as the result side of stories.
+  - id: bts-to-final
+    label: BTS to Final
+    description: Paired behind-the-scenes and final frames for transformations.
+
+formats:
+  image_preferred: webp
+  image_fallback: jpg
+  video_preferred: mp4
+  video_poster: webp
+
+dimensions:
+  editorial_horizontal:
+    width: 2400
+    height: 1600
+    aspect: "3:2"
+  editorial_vertical:
+    width: 1600
+    height: 2000
+    aspect: "4:5"
+  portrait_authority:
+    width: 1600
+    height: 2000
+    aspect: "4:5"
+  video_horizontal:
+    width: 1920
+    height: 1080
+    aspect: "16:9"
+  video_vertical:
+    width: 1080
+    height: 1920
+    aspect: "9:16"
+  video_poster:
+    width: 1920
+    height: 1080
+  og_share:
+    width: 1200
+    height: 630
+    aspect: "1.91:1"
+
+responsive_widths:
+  - 640
+  - 960
+  - 1280
+  - 1600
+  - 2400
+
+video:
+  bts_max_seconds: 12
+  bts_target_mb: 3
+  spoken_max_mb: 25

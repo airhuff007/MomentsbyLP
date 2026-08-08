@@ -1,0 +1,30 @@
+{{- /*
+  Image with educational caption.
+
+  Params:
+    src, alt, caption (required for educational use)
+    width, height, orientation, loading, class, srcset, sizes, fallback
+    label — optional eyebrow above caption (e.g. "Lighting note")
+*/ -}}
+{{- $caption := .caption | default "" -}}
+{{- $label := .label | default "" -}}
+{{- $mergedCaption := $caption -}}
+{{- if and $label $caption -}}
+  {{- $mergedCaption = printf "**%s.** %s" $label $caption -}}
+{{- else if $label -}}
+  {{- $mergedCaption = printf "**%s**" $label -}}
+{{- end -}}
+{{- partial "media/editorial-image.html" (dict
+  "src" .src
+  "alt" (.alt | default "")
+  "caption" $mergedCaption
+  "width" .width
+  "height" .height
+  "orientation" (.orientation | default "horizontal")
+  "loading" (.loading | default "lazy")
+  "class" (trim (printf "media-captioned %s" (.class | default "")) " ")
+  "srcset" .srcset
+  "sizes" .sizes
+  "fallback" .fallback
+  "decoding" (.decoding | default "async")
+) -}}
