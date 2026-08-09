@@ -44,6 +44,7 @@ Your finished gallery is delivered via a private online link within the timefram
 - [Maternity](/maternity-photographer-boca-raton/)
 - [Headshots](/headshots-boca-raton/)
 - [Commercial &amp; Business](/business-photography-boca-raton/)
+- [Luxury Property &amp; Hospitality](/luxury-property-photography/)
 - [Content Days](/content-days-boca-raton/)
 - [Seasonal Mini Sessions](/seasonal-mini-sessions-boca-raton/)
 

@@ -1,0 +1,26 @@
+---
+title: "Luxury Property & Hospitality Photography"
+seoTitle: "Luxury Property & Hospitality Photography in South Florida | Moments by LP"
+description: "Lifestyle photography and content production for luxury apartments, hotels, resorts, vacation rentals, and hospitality brands throughout South Florida. Moments by LP sells the South Florida lifestyle — not just empty rooms."
+keywords:
+  - "luxury property photography South Florida"
+  - "apartment photography Boca Raton"
+  - "hospitality photographer South Florida"
+  - "hotel photography Palm Beach County"
+  - "multifamily lifestyle photography"
+  - "vacation rental photographer South Florida"
+  - "resort photography Fort Lauderdale"
+  - "Airbnb photographer South Florida"
+  - "property management photography Florida"
+serviceType: "Luxury Property & Hospitality Photography"
+areaServed:
+  - "Boca Raton"
+  - "Delray Beach"
+  - "Palm Beach"
+  - "West Palm Beach"
+  - "Fort Lauderdale"
+  - "Miami"
+  - "Boynton Beach"
+  - "South Florida"
+ogImage: "/images/og-luxury-property.jpg"
+---
