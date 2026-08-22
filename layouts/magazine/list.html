@@ -1,5 +1,5 @@
 {{ define "main" }}
-<section class="page-magazine-list">
+<section class="page-magazine-list{{ if .Params.comingSoon }} page-magazine-list--coming-soon{{ end }}">
 
   <nav aria-label="Breadcrumb">
     <ol role="list">
@@ -12,11 +12,20 @@
   </nav>
 
   <header class="magazine-header">
+    {{ if .Params.comingSoon }}
+    <p class="eyebrow">{{ .Title }}</p>
+    <h1 class="coming-soon-title">
+      <span>Coming</span>
+      <span>Soon</span>
+    </h1>
+    {{ else }}
     <h1>{{ .Title }}</h1>
     {{ with .Params.description }}<p class="section-desc">{{ . }}</p>{{ end }}
     {{ with .Content }}<div class="section-intro">{{ . }}</div>{{ end }}
+    {{ end }}
   </header>
 
+  {{ if not .Params.comingSoon }}
   {{/* Magazine category navigation */}}
   {{ if .IsSection }}
   <nav class="magazine-categories" aria-label="Magazine categories">
@@ -31,9 +40,10 @@
   </nav>
   {{ end }}
 
-  {{ if .Pages }}
+  {{ $stories := .RegularPages }}
+  {{ if $stories }}
   <ul role="list" class="magazine-grid">
-    {{ range .Pages }}
+    {{ range $stories }}
     <li>
       <article>
         {{ with .Params.category }}<p class="story-category">{{ . }}</p>{{ end }}
@@ -50,6 +60,7 @@
 
   {{/* Newsletter on every magazine page */}}
   {{ partial "newsletter.html" . }}
+  {{ end }}
 
 </section>
 {{ end }}
