@@ -11,7 +11,9 @@
 
   <header>
     <h1>{{ .Title }}</h1>
+    {{ if not .Params.comingSoon }}
     {{ with .Params.description }}<p class="section-desc">{{ . }}</p>{{ end }}
+    {{ end }}
   </header>
 
   {{ with .Content }}
