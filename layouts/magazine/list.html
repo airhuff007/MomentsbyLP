@@ -14,10 +14,7 @@
   <header class="magazine-header">
     {{ if .Params.comingSoon }}
     <p class="eyebrow">{{ .Title }}</p>
-    <h1 class="coming-soon-title">
-      <span>Coming</span>
-      <span>Soon</span>
-    </h1>
+    <h1 class="coming-soon-title">Coming Soon</h1>
     {{ else }}
     <h1>{{ .Title }}</h1>
     {{ with .Params.description }}<p class="section-desc">{{ . }}</p>{{ end }}

@@ -820,30 +820,11 @@ footer[role="contentinfo"] {
 .page-magazine-list h1,
 .page-magazine-article h1 { margin-bottom: 1.5rem; }
 
-.page-magazine-list--coming-soon {
-  max-width: none;
-}
-
 .coming-soon-title {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  margin: 2rem 0 0;
-  font-size: clamp(4.25rem, 22vw, 7.5rem);
-  line-height: 0.88;
-  letter-spacing: -0.04em;
-}
-
-@media (min-width: 768px) {
-  .coming-soon-title {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 0.12em;
-    font-size: clamp(5.5rem, 12.5vw, 13.5rem);
-    white-space: nowrap;
-  }
+  margin: 0.5rem 0 0;
+  font-size: clamp(2.2rem, 5vw, 3.75rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
 .page-content h2 { margin-top: 2.5rem; }
