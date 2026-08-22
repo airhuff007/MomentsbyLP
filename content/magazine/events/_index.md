@@ -27,3 +27,8 @@ This is the guide that changes that.
 - **Seasonal Celebrations** &mdash; what happens in Boca Raton, Delray, and Palm Beach each month
 
 *Know about an event worth covering?* [Let us know →](/contact/)
+
+### Join the Creator Community
+
+Want collaboration, styled shoots, casting calls, and creative events in South Florida?
+[Join the Creative Community →](/creator-community/#join-creative-community)
