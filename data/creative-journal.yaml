@@ -1,6 +1,25 @@
 # Creative Journal — repeatable editorial content
 # Update topics, case studies, and pillars here without editing layouts.
 
+# Official article categories. Use these exact values in article front matter:
+#   category: "Creative Direction"
+categories:
+  - title: Creative Direction
+    slug: creative-direction
+    description: Concept, mood, color, styling, and campaign cohesion.
+  - title: Photography
+    slug: photography
+    description: Lighting, direction, composition, and image-making craft.
+  - title: Creative Business
+    slug: creative-business
+    description: Positioning, client experience, pricing, and sustainable growth.
+  - title: Community
+    slug: community
+    description: Collaboration, partnerships, and South Florida creative culture.
+  - title: Behind the Work
+    slug: behind-the-work
+    description: Educational case studies on decisions behind finished campaigns.
+
 expertise:
   - title: Creative Direction
     slug: creative-direction
@@ -14,6 +33,9 @@ expertise:
   - title: Community
     slug: community
     description: Creative collaboration, local partnerships, educational events, creator spotlights, and building a stronger photography and content community throughout South Florida.
+  - title: Behind the Work
+    slug: behind-the-work
+    description: Breaking down the preparation, lighting, direction, and collaboration decisions that shape a finished campaign—so other creatives can learn from the process.
 
 caseStudies:
   - title: The Coffee Campaign
@@ -25,7 +47,7 @@ caseStudies:
     image: /images/portfolio/preview-3.jpg
     imageAlt: Monochrome editorial photography with a unified color palette
   - title: Personal Brand Story
-    description: How location, wardrobe, posing, and content planning helped translate a founder’s personality into a cohesive personal-brand library.
+    description: How location, wardrobe, posing, and content planning helped translate a founder's personality into a cohesive personal-brand library.
     image: /images/offer-branding.jpg
     imageAlt: Personal branding photography session in South Florida
 
@@ -47,16 +69,16 @@ coffeeCallTopics:
   - Building relationships in the creative industry
   - Open creative Q&A
 
+# Topics Lauren can legitimately speak about — keep claims grounded, not fabricated credentials.
 speakingTopics:
-  - Building a recognizable visual brand
-  - Creative direction before the camera comes out
-  - Helping everyday people feel confident on camera
-  - Photography as a business tool
-  - Building a creative career through relationships
+  - Creative direction
+  - Commercial photography
+  - Visual branding
+  - Directing non-models
+  - Creative entrepreneurship
   - Community over competition
-  - Creating collaborative opportunities in South Florida
-  - The role of color and consistency in brand photography
-  - Growing from photographer to creative director
+  - South Florida creative collaboration
+  - Color and visual consistency
 
 newsletterInterests:
   - Photography and creative direction

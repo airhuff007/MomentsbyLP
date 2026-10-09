@@ -33,7 +33,7 @@
 {{ end }}
 
 {{/* ── Open Graph ── */}}
-{{ $ogImage := .Params.ogImage | default site.Params.ogImage }}
+{{ $ogImage := .Params.ogImage | default .Params.image | default site.Params.ogImage }}
 {{ $ogImagePath := $ogImage | strings.TrimPrefix "/" }}
 {{ $ogImageVersion := site.Params.ogImageVersion | default "1" }}
 {{ $ogImageURL := printf "%s%s?v=%s" site.BaseURL $ogImagePath $ogImageVersion }}

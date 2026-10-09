@@ -9,6 +9,7 @@ image: "/images/offer-branding.jpg"
 imageAlt: "Personal branding photography with cohesive styling and visual direction"
 author: "Lauren Huffman"
 readingTime: "5 min"
+noindex: true
 keywords:
   - "brand visual language"
   - "visual identity photography"
