@@ -35,4 +35,4 @@ Lauren photographs sessions throughout West Palm Beach, capturing the city&rsquo
 
 *Travel fee may apply for West Palm Beach sessions.*
 
-[Book a West Palm Beach session →](/book/)
+[Book a West Palm Beach session →](https://calendly.com/momentsbylpstudios)

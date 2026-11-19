@@ -47,20 +47,15 @@
 
         <p style="font-family:var(--font-sans); font-size:0.85rem; color:var(--color-muted); margin-top:2rem; line-height:1.7;">
           <strong style="color:var(--color-text);">Looking for portrait or personal brand sessions?</strong><br>
-          Use the standard <a href="https://api.agentboostsolutions.com/widget/booking/WXHLsqReFCa4m3hZoa83" target="_blank" rel="noopener noreferrer" class="text-link">booking page</a> instead.
+          Use the <a href="{{ site.Params.bookingURL }}" target="_blank" rel="noopener noreferrer" class="text-link">Calendly booking page</a> instead.
         </p>
       </div>
 
-      <div class="book-calendly">
+      <div class="book-calendly" id="schedule">
         <p class="eyebrow">Ready When You Are</p>
         <h2>Book Your Call Here</h2>
-        <p>Pick a time that works for you. Calls are 20 minutes and completely pressure-free.</p>
-        <a
-          href="https://api.agentboostsolutions.com/widget/booking/WXHLsqReFCa4m3hZoa83"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn--primary book-calendly__cta"
-        >Book Your Call&nbsp;&rarr;</a>
+        <p>Pick a time that works for you. Calls are 30 minutes and completely pressure-free.</p>
+        {{ partial "calendly.html" . }}
       </div>
 
     </div>

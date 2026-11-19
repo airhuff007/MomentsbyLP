@@ -74,4 +74,4 @@ Yes, for certain session types. Ask about payment plan options when you inquire.
 
 ## Ready to Book?
 
-[Contact Lauren →](/contact/)
+[Book on Calendly →](https://calendly.com/momentsbylpstudios)

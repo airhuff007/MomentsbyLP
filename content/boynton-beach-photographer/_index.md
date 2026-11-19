@@ -31,4 +31,4 @@ Lauren photographs families, brands, and couples throughout Boynton Beach, with 
 - [Couples &amp; Engagements](/couples-photography-boca-raton/) — beach and waterfront sessions
 - [Maternity Photography](/maternity-photographer-boca-raton/) — natural light sessions throughout Boynton Beach
 
-[Book a Boynton Beach session →](/book/)
+[Book a Boynton Beach session →](https://calendly.com/momentsbylpstudios)

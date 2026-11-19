@@ -280,7 +280,7 @@
     <div class="container">
       <h2>Have an idea worth creating?</h2>
       <div class="event-cta-bottom__buttons">
-        <a href="{{ $cfg.projectURL | default "/book-a-brand-call/" }}" class="btn btn--filled" data-track="project_inquiry_click">Start a Project</a>
+        <a href="{{ site.Params.bookingURL | default $cfg.projectURL }}" class="btn btn--filled" target="_blank" rel="noopener noreferrer" data-track="project_inquiry_click">Start a Project</a>
         <a href="{{ $cfg.communityURL | default "/creator-community/" }}" class="btn" data-track="creative_community_click">Join the Community</a>
       </div>
     </div>

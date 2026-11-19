@@ -1708,6 +1708,19 @@ nav[aria-label="Breadcrumb"] a:hover { color: var(--color-text); }
   margin-top: 1rem;
 }
 
+.book-calendly .calendly-inline-widget {
+  width: 100%;
+  min-width: 0;
+  height: 740px;
+  margin-top: 1.25rem;
+}
+
+.book-calendly__fallback {
+  margin-top: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+}
+
 .book-investment {
   text-align: center;
 }
@@ -1729,9 +1742,13 @@ nav[aria-label="Breadcrumb"] a:hover { color: var(--color-text); }
   }
 
   .book-calendly {
-    position: sticky;
-    top: calc(var(--nav-height) + 2rem);
     padding: 2rem 0;
+  }
+}
+
+@media (max-width: 899px) {
+  .book-calendly {
+    order: -1;
   }
 }
 
