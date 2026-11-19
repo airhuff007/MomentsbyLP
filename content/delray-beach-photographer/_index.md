@@ -36,4 +36,4 @@ Delray Beach offers a completely different photographic energy from Boca Raton:
 
 Lauren is based in Boca Raton and photographs regularly in Delray Beach. No travel fee for Delray Beach sessions.
 
-[Book your Delray Beach session →](/book/)
+[Book your Delray Beach session →](https://calendly.com/momentsbylpstudios)

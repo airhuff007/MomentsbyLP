@@ -38,4 +38,4 @@ Lauren has photographed hundreds of sessions across Boca Raton — on its beache
 
 Boca Raton has some of the most beautiful natural light in all of Florida. The combination of warm golden-hour light, clean beaches, lush parks, and architectural variety makes Boca one of the best cities in South Florida for photography.
 
-[Book a Boca Raton session →](/book/)
+[Book a Boca Raton session →](https://calendly.com/momentsbylpstudios)

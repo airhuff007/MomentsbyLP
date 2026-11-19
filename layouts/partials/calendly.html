@@ -1,0 +1,10 @@
+{{ with site.Params.bookingURL }}
+<div
+  class="calendly-inline-widget"
+  data-url="{{ . }}?hide_gdpr_banner=1&amp;background_color=faf9f7&amp;text_color=1c1c1a&amp;primary_color=1c1c1a"
+></div>
+<p class="book-calendly__fallback">
+  <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="text-link">Open the scheduler in a new tab</a>
+</p>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+{{ end }}

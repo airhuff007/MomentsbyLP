@@ -39,4 +39,4 @@ Lauren photographs families, couples, brands, and editorial projects on Palm Bea
 
 *Travel fee may apply for sessions on Palm Beach Island.*
 
-[Book a Palm Beach session →](/book/)
+[Book a Palm Beach session →](https://calendly.com/momentsbylpstudios)

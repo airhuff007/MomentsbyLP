@@ -52,4 +52,4 @@ On the day: multiple locations, multiple looks, and a relaxed, creative atmosphe
 
 Sessions available throughout Boca Raton, Delray Beach, Palm Beach, Fort Lauderdale, and surrounding South Florida areas. Lauren can also bring a mobile setup to your office or studio.
 
-[Inquire about a Content Day →](/book/)
+[Inquire about a Content Day →](https://calendly.com/momentsbylpstudios)
