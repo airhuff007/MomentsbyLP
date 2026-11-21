@@ -18,8 +18,17 @@
         authenticity, and intention.
       </p>
       <div class="pkg-hero__ctas about-reveal" data-delay="400">
-        <a href="{{ site.Params.bookingURL }}" target="_blank" rel="noopener noreferrer" class="btn btn--filled">Book a Call</a>
+        <a href="{{ site.Params.bookingURL }}" class="btn btn--filled">Book With Me</a>
       </div>
+    </div>
+  </section>
+
+  <section class="pkg-section" id="schedule" aria-label="Book with me">
+    <div class="container book-calendly">
+      <p class="eyebrow">Ready When You Are</p>
+      <h2>Book With Me</h2>
+      <p>Pick a time that works for you. The call is 30 minutes.</p>
+      {{ partial "calendly.html" . }}
     </div>
   </section>
 
@@ -176,8 +185,8 @@
       <h2>Ready to Build Your Content Library?</h2>
       <p>For commercial campaigns, content partnerships, and brand launch projects — start with a discovery call.</p>
       <div class="event-cta-bottom__buttons">
-        <a href="{{ site.Params.bookingURL }}" target="_blank" rel="noopener noreferrer" class="btn btn--filled" style="font-size:0.8rem; letter-spacing:0.14em; padding:1.1rem 3rem;">Book a Creative Discovery Call</a>
-        <p class="event-cta-bottom__detail">For portrait and personal brand sessions &mdash; <a href="{{ site.Params.bookingURL }}" target="_blank" rel="noopener noreferrer" style="color:rgba(250,249,247,0.5); text-decoration:underline;">book here instead</a></p>
+        <a href="{{ site.Params.bookingURL }}" class="btn btn--filled" style="font-size:0.8rem; letter-spacing:0.14em; padding:1.1rem 3rem;">Book a Creative Discovery Call</a>
+        <p class="event-cta-bottom__detail">For portrait and personal brand sessions &mdash; <a href="{{ site.Params.bookingURL }}" style="color:rgba(250,249,247,0.5); text-decoration:underline;">book here instead</a></p>
       </div>
     </div>
   </section>

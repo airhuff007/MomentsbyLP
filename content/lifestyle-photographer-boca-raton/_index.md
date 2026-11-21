@@ -38,4 +38,4 @@ Content-driven imagery for your Instagram, website, and marketing that shows the
 
 Lauren works at locations throughout Boca Raton and South Florida that match your aesthetic — coffee shops, beaches, parks, your home, or wherever feels most like you.
 
-[Book a lifestyle session →](https://calendly.com/momentsbylpstudios)
+[Book a lifestyle session →](https://calendly.com/momentsbylpstudios/30min)

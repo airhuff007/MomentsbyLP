@@ -34,4 +34,4 @@ Lauren photographs sessions throughout Fort Lauderdale and Broward County, captu
 
 *Travel fee applies for Fort Lauderdale sessions.*
 
-[Book a Fort Lauderdale session →](https://calendly.com/momentsbylpstudios)
+[Book a Fort Lauderdale session →](https://calendly.com/momentsbylpstudios/30min)
