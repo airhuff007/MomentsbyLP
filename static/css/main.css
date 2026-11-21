@@ -2974,8 +2974,14 @@ nav[aria-label="Breadcrumb"] a:hover { color: var(--color-text); }
   text-align: left;
 }
 
-/* Scroll-triggered editorial reveals */
+/* Scroll-triggered editorial reveals.
+   Content stays visible if JavaScript does not run, so the page cannot look blank. */
 .about-reveal {
+  opacity: 1;
+  transform: none;
+}
+
+html.js .about-reveal {
   opacity: 0;
   transform: translateY(32px);
   transition:
@@ -2983,19 +2989,19 @@ nav[aria-label="Breadcrumb"] a:hover { color: var(--color-text); }
     transform 1s var(--ease-out);
 }
 
-.about-reveal--left {
+html.js .about-reveal--left {
   transform: translateX(-48px);
 }
 
-.about-reveal--right {
+html.js .about-reveal--right {
   transform: translateX(48px);
 }
 
-.about-reveal--scale {
+html.js .about-reveal--scale {
   transform: translateY(24px) scale(0.97);
 }
 
-.about-reveal.is-visible {
+html.js .about-reveal.is-visible {
   opacity: 1;
   transform: translate(0) scale(1);
 }

@@ -9,8 +9,8 @@ params:
   businessName: "Moments by LP Photography"
   phone: ""
   email: "momentsbylpstudios@gmail.com"
-  # Calendly scheduling page (replaces the GoHighLevel booking widget).
-  bookingURL: "https://calendly.com/momentsbylpstudios"
+  # Opens the calendar directly. Same-tab links use this so the booking page actually loads.
+  bookingURL: "https://calendly.com/momentsbylpstudios/30min"
   city: "Boca Raton"
   state: "FL"
   region: "South Florida"
@@ -30,7 +30,7 @@ params:
   creativeJournal:
     communityURL: "/creator-community/"
     eventsURL: "/magazine/events/"
-    projectURL: "https://calendly.com/momentsbylpstudios"
+    projectURL: "https://calendly.com/momentsbylpstudios/30min"
     # TODO: Set CRM/form endpoints when MailerLite or AgentBoost forms are ready
     forms:
       communityWaitlistAction: ""
